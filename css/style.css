@@ -318,6 +318,9 @@ body {
 }
 
 /*projects*/
+#projects{
+    margin-bottom: 15rem;
+}
 .projects-title {
     font-size: 3rem;
     font-weight: 600;
