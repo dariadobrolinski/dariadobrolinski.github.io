@@ -326,6 +326,10 @@ body {
     padding-bottom: 5%;
     color: rgb(123,57,69);
 }
+.project-btn-container {
+    display: flex;
+    gap: 10px;
+}
 
 .content1 {
 	padding: 1.5rem;
@@ -495,12 +499,12 @@ body {
 	justify-content: center;
 }
 
-.bg-1 { background: rgb(143, 71, 84); }
-.bg-2 { background: rgb(181, 103, 117); }
-.bg-3 { background: rgb(143, 71, 84); }
-.bg-4 { background: rgb(181, 103, 117); }
-.bg-5 { background: rgb(143, 71, 84); }
-.bg-6 { background: rgb(181, 103, 117); }
+.bg-1 { background: rgb(181, 103, 117); }
+.bg-2 { background: rgb(143, 71, 84); }
+.bg-3 { background: rgb(181, 103, 117); }
+.bg-4 { background: rgb(143, 71, 84); }
+.bg-5 { background: rgb(181, 103, 117); }
+.bg-6 { background: rgb(143, 71, 84); }
 .bg-7 { background: rgb(143, 71, 84); }
 
 
@@ -566,7 +570,6 @@ body {
 	font-weight: 300;
 	font-size: clamp(1.5rem,10vw,2rem);
 }
-
 
 /* mobile */
 @media (max-width: 768px) {
