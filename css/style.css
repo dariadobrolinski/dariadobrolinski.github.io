@@ -267,7 +267,7 @@ body {
     color: rgb(157,115,119)
 }
 
-@media screen and (min-width: 53em) {
+@media (min-width: 768px) {
     .content-wrap:not(:last-child) {
         margin-bottom: 30vmax;
     }
@@ -322,12 +322,12 @@ body {
     .nav-links {
         display: none;
         flex-direction: column;
-        background:rgb(240,239,234);
+        background: rgb(240,239,234);
         background-image: url(https://i.ibb.co/vJt5HSh/noisy-texture-300x300-o10-d10-c-a82851-t1.png);
         position: absolute;
         right: 0;
         top: 62px;
-        width: 100px;
+        width: 100%;
         text-align: right;
         padding: 10px;
         gap: 10px;
