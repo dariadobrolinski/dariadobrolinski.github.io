@@ -18,6 +18,7 @@
 body {
     background: rgb(240,239,234);
 }
+
 header {
     display: flex;
     justify-content: space-between;
@@ -115,14 +116,13 @@ body {
 .intro .firstname{
     font-size: 200px;
     color: rgb(123,57,69);
-    text-shadow:0px 0px 0 rgb(99,33,45),-1px -1px 0 rgb(90,24,36),-2px -2px 0 rgb(80,14,26),-3px -3px 0 rgb(70,4,16),-4px -4px 0 rgb(61,-5,7),-5px -5px 0 rgb(51,-15,-3),-6px -6px 0 rgb(41,-25,-13),-7px -7px 0 rgb(32,-34,-22),-8px -8px 0 rgb(22,-44,-32), -9px -9px 0 rgb(12,-54,-42),-10px -10px 9px rgba(0,0,0,0.65),-10px -10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2);
     animation: slideInLeft 1s ease-in-out;
+    margin-bottom: -30px;
 }
 
 .intro .lastname{
     color: rgb(157,115,119);
     font-size: 80px;
-    text-shadow:0px 0px 0 rgb(135,92,97),-1px -1px 0 rgb(120,77,82),-2px -2px 0 rgb(106,63,68),-3px -3px 0 rgb(91,48,53),-4px -4px 0 rgb(77,34,39),-5px -5px 0 rgb(62,19,24), -6px -6px 0 rgb(48,5,10),-7px -7px 6px rgba(0,0,0,0.65),-7px -7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
     animation: slideInRight 1s ease-in-out;
 }
 
@@ -357,6 +357,7 @@ body {
 
     .intro .firstname{
         font-size: 80px;
+        margin-bottom: -10px;
     }
     
     .intro .lastname{
