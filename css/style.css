@@ -107,10 +107,8 @@ body {
 
 .intro h1 {
     font-weight: bold;
-    background: linear-gradient(45deg, #ff6b6b, #f06595);
     -webkit-background-clip: text;
     background-clip: text;
-    text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
 }
 
 .intro .firstname{
@@ -118,12 +116,14 @@ body {
     color: rgb(123,57,69);
     animation: slideInLeft 1s ease-in-out;
     margin-bottom: -30px;
+	transition: all 250ms;
 }
 
 .intro .lastname{
     color: rgb(157,115,119);
     font-size: 80px;
     animation: slideInRight 1s ease-in-out;
+	transition: all 250ms;
 }
 
 @keyframes fadeIn {
@@ -167,6 +167,8 @@ body {
         opacity: 1;
     }
 }
+
+
 
 .btn {
     display: inline-block;
@@ -414,19 +416,19 @@ body {
 
 .content1__img {
 	grid-area: content1-img;
-	width: 50%;
-	max-width: 300px;
+	width: 70%;
+	max-width: 400px;
 	height: auto;
 }
 
 .content1__img--large {
-	width: 60%;
+	width: 90%;
 	height: auto;
 }
 
 .content1__img--small {
-	height: 35%;
-	width: auto;
+	width: 15%;
+	height: auto;
 }
 
 .spacer {
