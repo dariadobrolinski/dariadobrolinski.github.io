@@ -126,6 +126,17 @@ body {
 	transition: all 250ms;
 }
 
+.intro .firstname,
+.intro .lastname {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.intro .firstname:hover,
+.intro .lastname:hover {
+    transform: scale(1.1);
+    color: rgb(181, 103, 117);
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
