@@ -221,6 +221,11 @@ body {
 }
 
 /* about */
+#about a{
+    color: var(--dark-red);
+    text-decoration: none;
+}
+
 .content-wrap {
     display: grid;
     place-items: center;
