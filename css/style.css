@@ -770,6 +770,28 @@ body {
         margin-right: 30px;
         margin-left: 30px;
     }
-}
 
+    .carousel {
+        max-width: 100%; 
+    }
+
+    .carousel-item {
+        min-width: 100%; 
+        height: auto; 
+    }
+
+    .carousel-btn {
+        font-size: 1rem; 
+        padding: 0.3rem 0.8rem;
+    }
+
+    .carousel-btn--left {
+        left: 5px; 
+    }
+
+    .carousel-btn--right {
+        right: 5px;
+    }
+
+}
 
