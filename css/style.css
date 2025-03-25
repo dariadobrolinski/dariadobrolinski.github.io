@@ -352,6 +352,14 @@ body {
     gap: 10px;
 }
 
+#projects .btn{
+    transition: transform 0.3s;
+}
+
+#projects .btn:hover{
+    transform: scale(1.1);
+}
+
 .content1 {
 	padding: 1.5rem;
 	display: flex;
