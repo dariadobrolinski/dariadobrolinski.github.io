@@ -1,3 +1,11 @@
+:root {
+    --off-white: rgb(240,239,234);
+    --dark-red: rgb(123,57,69);
+    --light-red: rgb(157,115,119);
+    --maroon: rgb(143, 71, 84);
+    --pink: rgb(181, 103, 117);
+}
+
 @font-face {
     font-family: 'Miles';
     src: url('/fonts/Miles-Regular.woff2') format('woff2'),
@@ -16,7 +24,7 @@
 
 /* all pages */
 body {
-    background: rgb(240,239,234);
+    background: var(--off-white);
 }
 
 header {
@@ -24,9 +32,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background:rgb(123,57,69);
+    background:var(--dark-red);
     background-image: url(https://i.ibb.co/vJt5HSh/noisy-texture-300x300-o10-d10-c-a82851-t1.png);
-    color: rgb(240,239,234);
+    color: var(--off-white);
     position: fixed;
     width: 100%;
     top: 0;
@@ -55,12 +63,12 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: rgb(240,239,234);
+    color: var(--off-white);
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: rgb(157,115,119)
+    color: var(--light-red);
 }
 
 .menu-toggle {
@@ -69,20 +77,20 @@ header {
     background: none;
     border: none;
     cursor: pointer;
-    color: rgb(123,57,69);
+    color: var(--dark-red);
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    background:rgb(123,57,69);
+    background:var(--dark-red);
     background-image: url(https://i.ibb.co/vJt5HSh/noisy-texture-300x300-o10-d10-c-a82851-t1.png);
-    color: rgb(240,239,234);
+    color: var(--off-white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 footer a {
-    color: rgb(240,239,234);
+    color: var(--off-white);
     text-decoration: none;
 }
 
@@ -97,7 +105,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: rgb(240,239,234);
+    background: var(--off-white);
 }
 
 .intro-text {
@@ -113,14 +121,14 @@ body {
 
 .intro .firstname{
     font-size: 200px;
-    color: rgb(123,57,69);
+    color: var(--dark-red);
     animation: slideInLeft 1s ease-in-out;
     margin-bottom: -30px;
 	transition: all 250ms;
 }
 
 .intro .lastname{
-    color: rgb(157,115,119);
+    color: var(--light-red);
     font-size: 80px;
     animation: slideInRight 1s ease-in-out;
 	transition: all 250ms;
@@ -134,7 +142,7 @@ body {
 .intro .firstname:hover,
 .intro .lastname:hover {
     transform: scale(1.1);
-    color: rgb(181, 103, 117);
+    color: var(--pink);
 }
 
 @keyframes fadeIn {
@@ -185,8 +193,8 @@ body {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background: rgb(240,239,234);
-    color: rgb(123,57,69);
+    background: var(--off-white);
+    color: var(--dark-red);
     text-decoration: none;
     border-radius: 20px;
     transition: background 0.3s, transform 0.3s;
@@ -194,8 +202,8 @@ body {
 
 .download {
     margin-top: 80px;
-    background: rgb(157,115,119);
-    color: rgb(240,239,234);
+    background: var(--light-red);
+    color: var(--off-white);
     animation: slideInBottom 1s ease-in-out;
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s;
@@ -208,8 +216,8 @@ body {
 
 
 .btn:hover {
-    background: rgb(123,57,69);
-    color: rgb(240,239,234)
+    background: var(--dark-red);
+    color: var(--off-white)
 }
 
 /* about */
@@ -217,7 +225,7 @@ body {
     display: grid;
     place-items: center;
     grid-template-areas: 'main';
-    background: rgb(240,239,234);
+    background: var(--off-white);
 }
 
 .content {
@@ -264,7 +272,7 @@ body {
     font-family: "Miles";
     font-variation-settings: "wdth" 200;
     font-weight: bolder;
-    color: rgb(123,57,69);
+    color: var(--dark-red);
     position: relative;
     z-index: 100;
     text-indent: -0.1em;
@@ -282,7 +290,7 @@ body {
 .content__text {
     grid-area: text;
     margin: 0;
-    color: rgb(157,115,119)
+    color: var(--light-red)
 }
 
 @media (min-width: 768px) {
@@ -345,7 +353,7 @@ body {
     margin: 0;
     text-align: center;
     padding-bottom: 5%;
-    color: rgb(123,57,69);
+    color: var(--dark-red);
 }
 .project-btn-container {
     display: flex;
@@ -528,13 +536,13 @@ body {
 	justify-content: center;
 }
 
-.bg-1 { background: rgb(181, 103, 117); }
-.bg-2 { background: rgb(143, 71, 84); }
-.bg-3 { background: rgb(181, 103, 117); }
-.bg-4 { background: rgb(143, 71, 84); }
-.bg-5 { background: rgb(181, 103, 117); }
-.bg-6 { background: rgb(143, 71, 84); }
-.bg-7 { background: rgb(181, 103, 117); }
+.bg-1 { background: var(--pink); }
+.bg-2 { background: var(--maroon); }
+.bg-3 { background: var(--pink); }
+.bg-4 { background: var(--maroon); }
+.bg-5 { background: var(--pink); }
+.bg-6 { background: var(--maroon); }
+.bg-7 { background: var(--pink); }
 
 
 .grid {
@@ -605,7 +613,7 @@ body {
     .nav-links {
         display: none;
         flex-direction: column;
-        background: rgb(240,239,234);
+        background: var(--off-white);
         background-image: url(https://i.ibb.co/vJt5HSh/noisy-texture-300x300-o10-d10-c-a82851-t1.png);
         position: absolute;
         right: 0;
@@ -618,11 +626,11 @@ body {
     }
 
     .nav-links a{
-        color: rgb(123,57,69);
+        color: var(--dark-red);
     }
 
     .nav-links a:hover {
-        color: rgb(157,115,119);
+        color: var(--light-red);
     }
 
     .nav-links.active {
@@ -631,7 +639,7 @@ body {
 
     .menu-toggle {
         display: block;
-        color:rgb(240,239,234);
+        color:var(--off-white);
     }
 
     .intro h1{
