@@ -351,7 +351,7 @@ body {
 
 /*projects*/
 #projects{
-    margin-bottom: 15rem;
+    padding: 0, 5rem;
 }
 .projects-title {
     font-size: 3rem;
