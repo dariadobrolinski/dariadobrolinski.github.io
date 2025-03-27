@@ -1,5 +1,7 @@
 # Personal Portfolio
 
+<img width="1438" alt="Screenshot 2025-03-27 at 11 46 06 AM" src="https://github.com/user-attachments/assets/c0447c24-61ed-4eec-aa8b-218f7d000b17" />
+
 Welcome to my personal portfolio! This project showcases my journey as a Computer Science student and highlights the projects I have worked on, the skills I have developed, and the knowledge I have gained.
 
 ## About the Portfolio
