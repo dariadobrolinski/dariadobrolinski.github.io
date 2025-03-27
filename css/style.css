@@ -197,27 +197,28 @@ body {
     color: var(--dark-red);
     text-decoration: none;
     border-radius: 20px;
-    transition: background 0.3s, transform 0.3s;
+    transition: background-color 0.5s, transform 0.3s;
 }
 
 .download {
     margin-top: 80px;
-    background: var(--light-red);
+    background-color: var(--light-red);
     color: var(--off-white);
     animation: slideInBottom 1s ease-in-out;
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
+    transition: background-color 0.5s, transform 0.3s;
 }
 
 .download:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
     box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.5);
 }
 
 
 .btn:hover {
     background: var(--dark-red);
-    color: var(--off-white)
+    color: var(--off-white);
+    transform: scale(1.1);
 }
 
 /* about */
@@ -366,13 +367,6 @@ body {
     gap: 10px;
 }
 
-#projects .btn{
-    transition: transform 0.3s;
-}
-
-#projects .btn:hover{
-    transform: scale(1.1);
-}
 
 .content1 {
 	padding: 1.5rem;
