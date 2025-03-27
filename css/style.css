@@ -728,6 +728,10 @@ body {
         margin-right: 30px;
     }
 
+    .content1__title {
+        text-align: center;
+    }
+
     .content-wrap:not(:last-child) {
         margin-bottom: 30vmax;
     }
