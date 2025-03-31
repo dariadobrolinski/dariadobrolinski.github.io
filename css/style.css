@@ -375,6 +375,7 @@ body {
 #projects{
     padding: 0, 5rem;
 }
+
 .projects-title {
     font-size: 3rem;
     font-weight: 600;
@@ -383,6 +384,7 @@ body {
     padding-bottom: 5%;
     color: var(--dark-red);
 }
+
 .project-btn-container {
     display: flex;
     gap: 10px;
