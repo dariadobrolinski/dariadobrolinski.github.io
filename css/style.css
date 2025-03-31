@@ -217,6 +217,7 @@ body {
     color: var(--dark-red);
     text-decoration: none;
     border-radius: 20px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
     transition: background-color 0.5s, transform 0.3s;
 }
 
