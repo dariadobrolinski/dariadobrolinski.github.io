@@ -94,6 +94,10 @@ footer a {
     text-decoration: none;
 }
 
+footer .btn {
+    margin: 10px 10px; 
+}
+
 /* home */
 body {
 	margin: 0;
