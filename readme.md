@@ -35,7 +35,7 @@ This portfolio is a reflection of my passion for web development, software engin
 
 2. **Myndavals**  
    A web application that allows users to share images and have friends select their favorite ones.  
-   - **Frontend**: HTML, CSS  
+   - **Frontend**: HTML, CSS, JavaScript
    - **Backend**: Python  
    - [Live Demo](https://sharefavorites-billowing-darkness-1530.fly.dev/) | [GitHub Repository](https://github.com/dariadobrolinski/myndavalsShare)
 
