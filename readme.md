@@ -28,22 +28,23 @@ This portfolio is a reflection of my passion for web development, software engin
 
 ## Projects Featured
 
-1. **ASL Recognition with TTS**
-   A system that reads the ASL alphabet outloud in real time.
+1. **ASL Recognition with TTS**  
+   A system that reads the ASL alphabet outloud in real time. 
    - **Technologies**: Python, OpenCV, Random Rainforest Classifier, MediaPipe
    - [GitHub Repository](https://github.com/dariadobrolinski/ASLrecognition)
-3. **Myndavals**  
+
+2. **Myndavals**  
    A web application that allows users to share images and have friends select their favorite ones.  
    - **Frontend**: HTML, CSS  
    - **Backend**: Python  
    - [Live Demo](https://sharefavorites-billowing-darkness-1530.fly.dev/) | [GitHub Repository](https://github.com/dariadobrolinski/myndavalsShare)
 
-4. **Embrace Every You**  
+3. **Embrace Every You**  
    A website to raise awareness about anorexia nervosa, including symptoms, treatment, and resources.  
    - **Technologies**: HTML, CSS, JavaScript  
    - [Live Demo](http://dariadobrolinski.me/embraceEveryYou/) | [GitHub Repository](https://github.com/dariadobrolinski/embraceEveryYou)
 
-5. **Automatic Irrigation System**  
+4. **Automatic Irrigation System**  
    An Arduino-based system using soil moisture sensors and water pumps to automate irrigation.  
    - **Technologies**: Arduino, Fusion 360  
    - [Slideshow](images/automatic-irigation-system.pdf)
