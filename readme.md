@@ -31,7 +31,7 @@ This portfolio is a reflection of my passion for web development, software engin
 1. **ASL Recognition with TTS**
    A system that reads the ASL alphabet outloud in real time.
    - **Technologies**: Python, OpenCV, Random Rainforest Classifier, MediaPipe
-   - [GitHub Repository] (https://github.com/dariadobrolinski/ASLrecognition)
+   - [GitHub Repository](https://github.com/dariadobrolinski/ASLrecognition)
 3. **Myndavals**  
    A web application that allows users to share images and have friends select their favorite ones.  
    - **Frontend**: HTML, CSS  
