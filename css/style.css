@@ -325,56 +325,6 @@ body {
     color: var(--light-red)
 }
 
-@media (min-width: 768px) {
-    .content-wrap:not(:last-child) {
-        margin-bottom: 30vmax;
-    }
-
-    .content__img {
-        max-width: none;
-    }
-
-    .content__img--2 {
-        width: 60vw;
-    }
-
-    .content--layout-2 {
-        grid-template-areas:  'title-up ...' 
-                              'img img'
-                              'text title-down';
-        grid-template-columns: auto auto;
-        justify-content: center;
-        row-gap: 3vh;
-    }
-
-    .title--up {
-        justify-self: end;
-        align-self: start;
-    }
-
-    .content--layout-2 .title--up {
-        justify-self: start;
-    }
-
-    .title--down {
-        justify-self: start;
-        align-self: end;
-    }
-
-    .content--layout-2 .title--down {
-        justify-self: end;
-        align-self: start;
-        margin-top: -0.1em;
-    }
-
-    .content--layout-2 .content__text {
-        align-self: start;
-        justify-self: start;
-        max-width: 400px;
-    }
-
-}
-
 /*projects*/
 #projects{
     padding: 0, 5rem;
@@ -751,6 +701,7 @@ body {
 
     .content1__title {
         text-align: center;
+        font-size: 40px;
     }
 
     .content-wrap:not(:last-child) {
@@ -759,6 +710,53 @@ body {
 
     .content__img {
         max-width: none;
+    }
+
+    .content-wrap:not(:last-child) {
+        margin-bottom: 30vmax;
+    }
+
+    .content__img {
+        max-width: none;
+    }
+
+    .content__img--2 {
+        width: 60vw;
+    }
+
+    .content--layout-2 {
+        grid-template-areas:  'title-up ...' 
+                              'img img'
+                              'text title-down';
+        grid-template-columns: auto auto;
+        justify-content: center;
+        row-gap: 3vh;
+    }
+
+    .title--up {
+        justify-self: end;
+        align-self: start;
+    }
+
+    .content--layout-2 .title--up {
+        justify-self: start;
+    }
+
+    .title--down {
+        justify-self: start;
+        align-self: end;
+    }
+
+    .content--layout-2 .title--down {
+        justify-self: end;
+        align-self: start;
+        margin-top: -0.1em;
+    }
+
+    .content--layout-2 .content__text {
+        align-self: start;
+        justify-self: start;
+        max-width: 400px;
     }
 
     .content__img--2 {
