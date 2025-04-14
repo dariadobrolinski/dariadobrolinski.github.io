@@ -124,6 +124,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     width: fit-content;
+    max-width: 100%; /* Ensure it doesn't exceed the screen width */
     margin: 0 auto;
     position: relative;
     animation: slideInLeft 1s ease-in-out;
@@ -134,7 +135,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     background-color: #2d2d2d;
-    box-shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     padding: 0.5rem 1rem;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -144,17 +145,16 @@ body {
     right: 0;
 }
 
+.terminal-content {
+    margin-top: 2rem; /* Space for the header */
+    white-space: normal; /* Allow text to wrap */
+    word-break: break-word; /* Break long words if necessary */
+}
+
 .terminal-prompt {
     color: var(--off-white);
     font-weight: bold;
     margin-right: 0.5rem;
-}
-
-.terminal-header .button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin-right: 8px;
 }
 
 .terminal-header .button.red {
@@ -169,18 +169,12 @@ body {
     background-color: #27c93f;
 }
 
-.terminal-content {
-    margin-top: 2rem; /* Space for the header */
-}
-
 .cursor {
     display: inline-block;
     background-color: var(--off-white);
     width: 2px;
     height: 1.2em;
     animation: blink 0.7s steps(2, start) infinite;
-    position: relative;
-    left: 0; /* Reset left positioning */
 }
 
 @keyframes blink {
@@ -864,5 +858,29 @@ body {
         right: 5px;
     }
 
+    .terminal {
+        font-size: 2rem; /* Reduce font size */
+        padding: 1.5rem; /* Adjust padding */
+        width: 90%; /* Make it fit smaller screens */
+    }
+
+    .terminal-header {
+        padding: 0.5rem; /* Adjust header padding */
+    }
+
+    .cursor {
+        height: 1em; /* Adjust cursor height */
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal {
+        font-size: 1.5rem; /* Further reduce font size */
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .terminal-header {
+        padding: 0.3rem; /* Adjust header padding */
+    }
 }
 
