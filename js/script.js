@@ -50,3 +50,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCarousel();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const text = "DARIA-DOBROLINSKI";
+  const typedText = document.getElementById("typed-text");
+  let index = 0;
+  let isDeleting = false;
+
+  function typeEffect() {
+    if (!isDeleting && index < text.length) {
+      // Typing effect
+      typedText.textContent += text[index];
+      index++;
+      setTimeout(typeEffect, 150); // Typing speed
+    } else if (isDeleting && index > 0) {
+      // Deleting effect
+      typedText.textContent = text.substring(0, index - 1);
+      index--;
+      setTimeout(typeEffect, 100); // Deleting speed
+    } else if (!isDeleting && index === text.length) {
+      // Pause after typing
+      setTimeout(() => {
+        isDeleting = true;
+        typeEffect();
+      }, 5000); // Pause for 5 seconds
+    } else if (isDeleting && index === 0) {
+      // Restart typing
+      isDeleting = false;
+      typeEffect();
+    }
+  }
+
+  typeEffect();
+});

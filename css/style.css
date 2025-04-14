@@ -112,41 +112,81 @@ body {
     background: var(--off-white);
 }
 
-.intro-text {
-    text-align: center;
-    animation: fadeIn 2s ease-in-out;
-}
-
-.intro h1 {
-    font-weight: bold;
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.intro .firstname{
-    font-size: 200px;
-    color: var(--dark-red);
+.terminal {
+    font-family: 'Miles';
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--off-white);
+    background-color: var(--dark-red);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
     animation: slideInLeft 1s ease-in-out;
-    margin-bottom: -30px;
-	transition: all 250ms;
 }
 
-.intro .lastname{
-    color: var(--light-red);
-    font-size: 80px;
-    animation: slideInRight 1s ease-in-out;
-	transition: all 250ms;
+.terminal-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #2d2d2d;
+    box-shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
-.intro .firstname,
-.intro .lastname {
-    transition: transform 0.3s ease, color 0.3s ease;
+.terminal-prompt {
+    color: var(--off-white);
+    font-weight: bold;
+    margin-right: 0.5rem;
 }
 
-.intro .firstname:hover,
-.intro .lastname:hover {
-    transform: scale(1.1);
-    color: var(--pink);
+.terminal-header .button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.terminal-header .button.red {
+    background-color: #ff5f56;
+}
+
+.terminal-header .button.yellow {
+    background-color: #ffbd2e;
+}
+
+.terminal-header .button.green {
+    background-color: #27c93f;
+}
+
+.terminal-content {
+    margin-top: 2rem; /* Space for the header */
+}
+
+.cursor {
+    display: inline-block;
+    background-color: var(--off-white);
+    width: 2px;
+    height: 1.2em;
+    animation: blink 0.7s steps(2, start) infinite;
+    position: relative;
+    left: 0; /* Reset left positioning */
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
 }
 
 @keyframes fadeIn {
