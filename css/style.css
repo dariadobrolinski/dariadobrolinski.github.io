@@ -270,16 +270,11 @@ body {
 
 .download {
     margin-top: 80px;
-    background-color: var(--light-red);
+    background-color: var(--pink);
     color: var(--off-white);
     animation: slideInBottom 1s ease-in-out;
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
     transition: background-color 0.5s, transform 0.3s;
-}
-
-.download:hover{
-    transform: scale(1.2);
-    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.5);
 }
 
 
