@@ -284,6 +284,10 @@ body {
     transform: scale(1.1);
 }
 
+.btn:active {
+    transform: translateY(4px);
+}
+
 /* about */
 #about a{
     color: var(--dark-red);
