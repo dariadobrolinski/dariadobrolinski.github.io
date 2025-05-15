@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 /* all pages */
@@ -263,7 +263,7 @@ body {
 /* about */
 #about a{
     color: var(--dark-red);
-    opacity: 0.9;
+    font-weight: 575;
     text-decoration: none;
 }
 
