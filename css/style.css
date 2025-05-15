@@ -6,20 +6,11 @@
     --pink: rgb(181, 103, 117);
 }
 
-@font-face {
-    font-family: 'Miles';
-    src: url('/fonts/Miles-Regular.woff2') format('woff2'),
-        url('/fonts/Miles-Regular.woff') format('woff');
-    font-weight: 900px;
-    font-style: normal;
-    font-display: swap;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Miles', 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* all pages */
