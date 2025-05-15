@@ -13,21 +13,37 @@
   </head>
 
   <body>
-  
-    <header>
-      <div class="name">DD</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about"><i class="fa-solid fa-person-dress"></i> ABOUT </a></li>
-          <li><a href="#projects"><i class="fa-solid fa-laptop-code"></i> PROJECTS </a></li>
-          <li><a href="#experience"><i class="fa-solid fa-briefcase"></i> EXPERIENCE </a></li>
-          <li><a href="#skills"><i class="fa-solid fa-dumbbell"></i> SKILLS </a></li>
-          <li><a href=#awards><i class="fa-solid fa-award"></i> AWARDS </a></li>
-          <li><a href="#contact"><i class="fa-solid fa-message"></i> CONTACT </a></li>
-        </ul>
-      </nav>
-      <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
-    </header>
+
+    <div class="floating-nav">
+      <div class="nav-dot" data-section="home">
+        <span class="dot"><i class="fa-solid fa-house"></i></span>
+        <span class="dot-label">Home</span>
+      </div>
+      <div class="nav-dot" data-section="about">
+        <span class="dot"><i class="fa-solid fa-person-dress"></i></span>
+        <span class="dot-label">About</span>
+      </div>
+      <div class="nav-dot" data-section="projects">
+        <span class="dot"><i class="fa-solid fa-laptop-code"></i></span>
+        <span class="dot-label">Projects</span>
+      </div>
+      <div class="nav-dot" data-section="experience">
+        <span class="dot"><i class="fa-solid fa-briefcase"></i></span>
+        <span class="dot-label">Experience</span>
+      </div>
+      <div class="nav-dot" data-section="skills">
+        <span class="dot"><i class="fa-solid fa-dumbbell"></i></span>
+        <span class="dot-label">Skills</span>
+      </div>
+      <div class="nav-dot" data-section="awards">
+        <span class="dot"><i class="fa-solid fa-award"></i></span>
+        <span class="dot-label">Awards</span>
+      </div>
+      <div class="nav-dot" data-section="contact">
+        <span class="dot"><i class="fa-solid fa-message"></i></span>
+        <span class="dot-label">Contact</span>
+      </div>
+    </div>
 
     <section id="home" class="intro">
       <div class="intro-text">
@@ -285,16 +301,33 @@
       </div>
     </section>
 
-    <footer id ="contact">
-      <h2>Contact Me</h2>
-      <a href="mailto: dsdobrolinski@gmail.com" class="btn email"><i class="fa-solid fa-envelope-open"></i> Email Me</a>
-      <a
-        href="https://www.linkedin.com/in/daria-dobrolinski/"
-        target="_blank"
-        class="btn"
-      >
-      <i class="fa-solid fa-link"></i> LinkedIn
-      </a>
+    <footer id="contact">
+        <div class="contact-container">
+            <h2 class="contact-title">Let's Connect</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto: dsdobrolinski@gmail.com">dsdobrolinski@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Boston, MA</span>
+                    </div>
+                </div>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/daria-dobrolinski/" target="_blank" class="contact-btn">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/dariadobrolinski" target="_blank" class="contact-btn">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>

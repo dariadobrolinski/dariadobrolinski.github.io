@@ -83,3 +83,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   typeEffect();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navDots = document.querySelectorAll('.nav-dot');
+  
+  // Function to update active dot based on scroll position
+  const updateActiveDot = () => {
+    const sections = document.querySelectorAll('section');
+    const footer = document.querySelector('footer');
+    const scrollPosition = window.scrollY + window.innerHeight / 3;
+    const documentHeight = document.documentElement.scrollHeight;
+    const windowHeight = window.innerHeight;
+
+    // Check if we're near the bottom of the page (contact section)
+    if (scrollPosition + windowHeight >= documentHeight - 100) {
+        navDots.forEach(dot => dot.classList.remove('active'));
+        document.querySelector('[data-section="contact"]').classList.add('active');
+        return;
+    }
+
+    // Regular section detection
+    sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            navDots.forEach(dot => dot.classList.remove('active'));
+            navDots[index].classList.add('active');
+        }
+    });
+  };
+
+  // Add click event to each dot
+  navDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const sectionId = dot.getAttribute('data-section');
+      const section = document.getElementById(sectionId);
+      section.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Update active dot on scroll
+  window.addEventListener('scroll', updateActiveDot);
+  updateActiveDot(); // Initial check
+});
