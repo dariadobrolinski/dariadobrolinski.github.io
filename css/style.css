@@ -128,7 +128,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     width: fit-content;
-    max-width: 100%; /* Ensure it doesn't exceed the screen width */
+    max-width: 100%;
     margin: 0 auto;
     position: relative;
     animation: slideInLeft 1s ease-in-out;
@@ -150,9 +150,9 @@ body {
 }
 
 .terminal-content {
-    margin-top: 2rem; /* Space for the header */
-    white-space: normal; /* Allow text to wrap */
-    word-break: break-word; /* Break long words if necessary */
+    margin-top: 2rem; 
+    white-space: normal;
+    word-break: break-word; 
 }
 
 .terminal-prompt {
@@ -615,7 +615,7 @@ body {
 .bg-6 { background: var(--maroon); }
 .bg-7 { background: var(--pink); }
 
-/* Experience Section */
+/* experience */
 .experience {
     background: var(--off-white);
     padding: 6rem 0;
@@ -779,7 +779,6 @@ body {
         margin-bottom: 0.4rem;
     }
 
-    /* Skills Section Mobile Styles */
     .skills {
         padding: 4rem 1rem;
     }
@@ -835,13 +834,12 @@ body {
         color: var(--pink);
     }
 
-    /* Adjust spacing for mobile */
     .experience, .skills {
         padding: 3rem 0;
     }
 
     .awards-title {
-        font-size: 2rem;
+        font-size: 1rem;
         margin-bottom: 1.5rem;
     }
 }
@@ -898,7 +896,7 @@ body {
     margin: 10vh 0 10vh;
 }
 
-/* Skills Section */
+/* skills */
 .skills {
     background: var(--off-white);
     padding: 6rem 2rem;
