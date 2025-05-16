@@ -67,10 +67,8 @@ body {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    white-space: nowrap;
-    overflow: hidden;
-    width: fit-content;
-    max-width: 100%;
+    width: 800px;
+    height: 180px;
     margin: 0 auto;
     position: relative;
     animation: slideInLeft 1s ease-in-out;
@@ -92,9 +90,9 @@ body {
 }
 
 .terminal-content {
-    margin-top: 2rem; 
+    margin-top: 2rem;
     white-space: normal;
-    word-break: break-word; 
+    word-break: break-word;
 }
 
 .terminal-prompt {
@@ -762,6 +760,13 @@ body {
         font-size: 1rem;
         margin-bottom: 1.5rem;
     }
+
+    .terminal {
+        font-size: 2rem;
+        padding: 1.5rem;
+        width: 90%;
+        height: 160px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -805,6 +810,13 @@ body {
 
     .awards-title {
         font-size: 1.8rem;
+    }
+
+    .terminal {
+        font-size: 1.5rem;
+        padding: 1rem;
+        width: 95%;
+        height: 140px;
     }
 }
 
@@ -1146,8 +1158,9 @@ body {
 
     .terminal {
         font-size: 2rem;
-        padding: 1.5rem; 
-        width: 90%; 
+        padding: 1.5rem;
+        width: 90%;
+        height: 160px;
     }
 
     .terminal-header {
@@ -1161,8 +1174,10 @@ body {
 
 @media (max-width: 480px) {
     .terminal {
-        font-size: 1.5rem; 
-        padding: 1rem; 
+        font-size: 1.5rem;
+        padding: 1rem;
+        width: 95%;
+        height: 140px;
     }
 
     .terminal-header {
