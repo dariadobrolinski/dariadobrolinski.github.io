@@ -759,11 +759,11 @@ body {
     }
 
     .timeline-header h3 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
     .timeline-body li {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         margin-bottom: 0.4rem;
     }
 
@@ -785,12 +785,12 @@ body {
     }
 
     .skill-icon {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom: 0;
     }
 
     .skill-category h3 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         margin-bottom: 0;
     }
 
@@ -814,7 +814,7 @@ body {
     }
 
     .skill-details li {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         margin: 0.3rem 0;
     }
 
@@ -827,15 +827,23 @@ body {
     }
 
     .awards-title {
-        font-size: 1rem;
+        font-size: 1.8rem;
         margin-bottom: 1.5rem;
     }
 
     .terminal {
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding: 1.5rem;
         width: 90%;
         height: 160px;
+    }
+
+    .content1__text {
+        font-size: 1.1rem;
+    }
+
+    .content1__title {
+        font-size: 1.8rem;
     }
 }
 
@@ -845,11 +853,11 @@ body {
     }
 
     .timeline-header h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .timeline-body li {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .skill-category {
@@ -858,11 +866,11 @@ body {
     }
 
     .skill-icon {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .skill-category h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .skill-details {
@@ -874,19 +882,27 @@ body {
     }
 
     .skill-details li {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         margin: 0.2rem 0;
     }
 
     .awards-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .terminal {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         padding: 1rem;
         width: 95%;
         height: 140px;
+    }
+
+    .content1__text {
+        font-size: 0.9rem;
+    }
+
+    .content1__title {
+        font-size: 1.5rem;
     }
 }
 
