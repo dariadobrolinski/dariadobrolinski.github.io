@@ -1635,3 +1635,28 @@ footer {
     }
 }
 
+@media (max-width: 768px) {
+    .project-btn-container {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .project-btn-container .btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-btn-container .btn {
+        max-width: 250px;
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+}
+
