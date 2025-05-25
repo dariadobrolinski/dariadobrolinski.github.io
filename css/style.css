@@ -528,12 +528,11 @@ body {
 
 .content1__title {
 	grid-area: content1-title;
-	text-transform: uppercase;
 	line-height: 1;
 	font-weight: 800;
 	font-size: clamp(1.5rem,5vw,4rem);
 	margin: 0;
-    color: #FFFAEB;
+    color: var(--off-white);
 }
 
 .intro {
@@ -572,7 +571,7 @@ body {
 	line-height: 1.5;
 	padding: 0 1rem;
 	backface-visibility: hidden;
-    color: #FFFAEB;
+    color: var(--off-white);
     font-size: 25px;
 }
 
