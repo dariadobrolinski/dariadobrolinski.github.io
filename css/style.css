@@ -1039,6 +1039,26 @@ body {
     color: var(--pink);
 }
 
+.programming-skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem 0.8rem;
+}
+
+.programming-skills li {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.programming-skills li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--pink);
+}
+
 @media (max-width: 768px) {
     .skills-grid {
         grid-template-columns: 1fr;
@@ -1675,5 +1695,42 @@ footer {
     font-size: clamp(1.5rem, 3vw, 2rem);
     opacity: 0.9;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Programming skills for very small screens */
+.programming-skills {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.2rem 0.6rem;
+}
+
+.programming-skills li {
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+    padding-left: 1.5rem;
+}
+
+.programming-skills li::before {
+    font-size: 0.8rem;
+}
+
+/* Programming skills responsive */
+.programming-skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem 0.8rem;
+}
+
+.programming-skills li {
+    font-size: 0.85rem;
+    margin: 0.3rem 0;
+    padding-left: 1.5rem;
+}
+
+.programming-skills li::before {
+    font-size: 0.85rem;
+}
+
+.experience, .skills {
+    padding: 6rem 0;
 }
 
