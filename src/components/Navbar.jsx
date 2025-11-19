@@ -44,6 +44,8 @@ const Navbar = () => {
     { id: 'contact', icon: <FaEnvelope />, label: 'Contact' },
   ];
 
+  const [hoveredItem, setHoveredItem] = useState(null);
+
   return (
     <nav style={{
       position: 'fixed',
@@ -59,6 +61,8 @@ const Navbar = () => {
         <div 
           key={item.id}
           onClick={() => scrollToSection(item.id)}
+          onMouseEnter={() => setHoveredItem(item.id)}
+          onMouseLeave={() => setHoveredItem(null)}
           style={{
             position: 'relative',
             cursor: 'pointer',
@@ -68,21 +72,22 @@ const Navbar = () => {
           }}
           className="nav-item"
         >
-          <span className="label" style={{
+          <div style={{
             position: 'absolute',
-            right: '40px',
-            background: 'var(--accent-pink)',
+            right: '50px',
+            background: 'rgba(0, 0, 0, 0.8)',
             color: 'white',
-            padding: '5px 10px',
+            padding: '5px 12px',
             borderRadius: '5px',
-            fontSize: '0.8rem',
-            opacity: 0,
-            pointerEvents: 'none',
-            transition: 'opacity 0.3s',
-            whiteSpace: 'nowrap'
+            fontSize: '0.9rem',
+            opacity: hoveredItem === item.id ? 1 : 0,
+            transform: hoveredItem === item.id ? 'translateX(0)' : 'translateX(10px)',
+            transition: 'all 0.3s ease',
+            whiteSpace: 'nowrap',
+            pointerEvents: 'none'
           }}>
             {item.label}
-          </span>
+          </div>
           <motion.div
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
@@ -103,11 +108,6 @@ const Navbar = () => {
           </motion.div>
         </div>
       ))}
-      <style>{`
-        .nav-item:hover .label {
-          opacity: 1;
-        }
-      `}</style>
     </nav>
   );
 };
