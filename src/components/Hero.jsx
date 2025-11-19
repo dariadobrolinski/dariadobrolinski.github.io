@@ -15,8 +15,32 @@ const Hero = () => {
           }}
           className="relative flex flex-col gap-4 items-center justify-center px-4"
         >
-          <div className="text-3xl md:text-7xl font-bold dark:text-white text-center text-white">
-            Hi, I'm Daria Dobrolinski
+          <div className="text-center">
+            <h1 style={{
+              fontSize: 'clamp(2.5rem, 8vw, 5rem)',
+              fontWeight: '800',
+              color: 'white',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.05em',
+              textTransform: 'uppercase',
+              background: 'linear-gradient(135deg, #ffffff 0%, var(--accent-pink) 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              textShadow: '0 0 40px rgba(255, 182, 193, 0.3)',
+            }}>
+              DARIA DOBROLINSKI
+            </h1>
+            <p style={{
+              fontSize: 'clamp(1.2rem, 3vw, 2rem)',
+              fontWeight: '300',
+              color: 'rgba(255, 255, 255, 0.9)',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              marginTop: '1rem',
+            }}>
+              Full Stack Developer
+            </p>
           </div>
 
           <motion.a
