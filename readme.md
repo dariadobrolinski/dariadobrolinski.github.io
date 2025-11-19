@@ -1,66 +1,16 @@
-# Personal Portfolio
+# React + Vite
 
-![image](https://github.com/user-attachments/assets/a2bd9400-8ae3-4ce2-8f2c-3518bc9800fc)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Welcome to my personal portfolio! This project showcases my journey as a Computer Science student and highlights the projects I have worked on, the skills I have developed, and the knowledge I have gained.
+Currently, two official plugins are available:
 
-## About the Portfolio
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-This portfolio is a reflection of my passion for web development, software engineering, and UI design. Through this project, I have learned a lot about creating visually appealing and user-friendly interfaces. It also demonstrates my ability to combine creativity with technical skills to build engaging web experiences.
+## React Compiler
 
-## Features
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-- **Responsive Design**: The portfolio is fully responsive and adapts seamlessly to different screen sizes.
-- **Smooth Scrolling**: Implemented smooth scrolling using the Lenis library for a better user experience.
-- **Interactive Animations**: Leveraged GSAP and Flip.js for animations and transitions to make the portfolio dynamic and engaging.
-- **Project Highlights**: Showcases my key projects with descriptions, links to live demos, and GitHub repositories.
-- **Awards Section**: Displays my achievements and certifications in a carousel format.
-- **Contact Section**: Includes links to my email and LinkedIn profile for easy communication.
+## Expanding the ESLint configuration
 
-## Technologies Used
-
-- **HTML**: For structuring the content of the portfolio.
-- **CSS**: For styling and layout, including custom animations and transitions.
-- **JavaScript**: For interactivity and dynamic behavior.
-- **GSAP**: For advanced animations and transitions.
-- **Flip.js**: For smooth state transitions and animations.
-- **Lenis**: For smooth scrolling functionality.
-
-## Projects Featured
-
-1. **ASL Recognition with TTS**  
-   A system that reads the ASL alphabet outloud in real time. 
-   - **Technologies**: Python, OpenCV, Random Rainforest Classifier, MediaPipe
-   - [GitHub Repository](https://github.com/dariadobrolinski/ASLrecognition)
-
-2. **Myndavals**  
-   A web application that allows users to share images and have friends select their favorite ones.  
-   - **Frontend**: HTML, CSS, JavaScript
-   - **Backend**: Python  
-   - [Live Demo](https://sharefavorites-billowing-darkness-1530.fly.dev/) | [GitHub Repository](https://github.com/dariadobrolinski/myndavalsShare)
-
-3. **Embrace Every You**  
-   A website to raise awareness about anorexia nervosa, including symptoms, treatment, and resources.  
-   - **Technologies**: HTML, CSS, JavaScript  
-   - [Live Demo](http://dariadobrolinski.me/embraceEveryYou/) | [GitHub Repository](https://github.com/dariadobrolinski/embraceEveryYou)
-
-4. **Automatic Irrigation System**  
-   An Arduino-based system using soil moisture sensors and water pumps to automate irrigation.  
-   - **Technologies**: Arduino, Fusion 360  
-   - [Slideshow](images/automatic-irigation-system.pdf)
-
-## Lessons Learned
-
-- Improved my understanding of **UI/UX design principles** and how to create visually appealing layouts.
-- Gained hands-on experience with **responsive design** and ensuring compatibility across devices.
-- Enhanced my skills in **JavaScript animations** using GSAP and Flip.js.
-- Learned how to integrate **smooth scrolling** for a better user experience.
-
-## Contact
-
-Feel free to reach out to me for collaboration or inquiries:
-
-- **Email**: [dsdobrolinski@gmail.com](mailto:dsdobrolinski@gmail.com)
-- **LinkedIn**: [Daria Dobrolinski](https://www.linkedin.com/in/daria-dobrolinski/)
-
-Thank you for visiting my portfolio!
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
