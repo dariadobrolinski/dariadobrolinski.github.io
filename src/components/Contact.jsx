@@ -20,7 +20,7 @@ const Contact = () => {
 
         <div style={{
           display: 'flex',
-          justifyContent: 'space-around',
+          justifyContent: 'center',
           flexWrap: 'wrap',
           gap: '40px',
           marginBottom: '60px'
@@ -38,10 +38,12 @@ const Contact = () => {
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
-          <a 
+          <motion.a 
             href="https://www.linkedin.com/in/daria-dobrolinski/" 
             target="_blank" 
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.9 }}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -51,16 +53,19 @@ const Contact = () => {
               color: 'white',
               borderRadius: '30px',
               textDecoration: 'none',
-              fontWeight: 'bold'
+              fontWeight: 'bold',
+              boxShadow: '0 4px 6px rgba(0,0,0,0.2)'
             }}
           >
             <FaLinkedin size={20} />
             LinkedIn
-          </a>
-          <a 
+          </motion.a>
+          <motion.a 
             href="https://github.com/dariadobrolinski" 
             target="_blank" 
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.9 }}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -70,12 +75,13 @@ const Contact = () => {
               color: 'white',
               borderRadius: '30px',
               textDecoration: 'none',
-              fontWeight: 'bold'
+              fontWeight: 'bold',
+              boxShadow: '0 4px 6px rgba(0,0,0,0.2)'
             }}
           >
             <FaGithub size={20} />
             GitHub
-          </a>
+          </motion.a>
         </div>
         
         <p style={{ marginTop: '60px', color: '#666', fontSize: '0.9rem' }}>

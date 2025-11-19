@@ -1,22 +1,27 @@
 import { motion } from 'framer-motion';
-import { FaCode, FaMicrochip, FaTools } from 'react-icons/fa';
+import { FaCode, FaDesktop, FaDatabase, FaCloud } from 'react-icons/fa';
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Programming",
+      title: "Languages",
       icon: <FaCode />,
-      skills: ["Python", "JavaScript", "Java", "C", "HTML/CSS", "MATLAB"]
+      skills: ["Python", "C", "Java", "JavaScript", "TypeScript", "MATLAB"]
     },
     {
-      title: "Hardware",
-      icon: <FaMicrochip />,
-      skills: ["Arduino", "3D Printing", "Fusion 360"]
+      title: "Frontend",
+      icon: <FaDesktop />,
+      skills: ["React", "HTML/CSS", "Figma"]
     },
     {
-      title: "Tools",
-      icon: <FaTools />,
-      skills: ["Git", "MongoDB", "FastAPI", "Flask"]
+      title: "Backend & Databases",
+      icon: <FaDatabase />,
+      skills: ["FastAPI", "MongoDB", "SQLAlchemy", "Supabase"]
+    },
+    {
+      title: "Tools & Cloud",
+      icon: <FaCloud />,
+      skills: ["Git", "Docker", "VS Code", "Google Cloud (Vertex AI, Cloud Run, Cloud Storage)"]
     }
   ];
 
@@ -37,8 +42,8 @@ const Skills = () => {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '30px'
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: '20px'
         }}>
           {skillCategories.map((category, index) => (
             <motion.div
@@ -50,35 +55,38 @@ const Skills = () => {
               whileHover={{ y: -10 }}
               style={{
                 background: 'var(--bg-color)',
-                padding: '40px',
+                padding: '25px',
                 borderRadius: '15px',
                 textAlign: 'center',
                 border: '1px solid #333',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+                boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
               }}
             >
               <div style={{
-                fontSize: '3rem',
+                fontSize: '2.5rem',
                 color: 'var(--accent-pink)',
-                marginBottom: '20px'
+                marginBottom: '15px'
               }}>
                 {category.icon}
               </div>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '25px' }}>{category.title}</h3>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '20px' }}>{category.title}</h3>
               <ul style={{
                 listStyle: 'none',
                 padding: 0,
                 display: 'flex',
                 flexWrap: 'wrap',
                 justifyContent: 'center',
-                gap: '10px'
+                gap: '8px'
               }}>
                 {category.skills.map((skill, i) => (
                   <li key={i} style={{
                     background: '#333',
-                    padding: '8px 15px',
-                    borderRadius: '20px',
-                    fontSize: '0.9rem',
+                    padding: '6px 12px',
+                    borderRadius: '15px',
+                    fontSize: '0.8rem',
                     color: '#eee'
                   }}>
                     {skill}
@@ -88,6 +96,18 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
+        <style>{`
+          @media (max-width: 1024px) {
+            #skills > div > div {
+              grid-template-columns: repeat(2, 1fr) !important;
+            }
+          }
+          @media (max-width: 600px) {
+            #skills > div > div {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        `}</style>
       </div>
     </section>
   );

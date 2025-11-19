@@ -69,18 +69,38 @@ const Hero = () => {
       <motion.a
         href="/images/daria-dobrolinski.pdf"
         download
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ 
+          scale: 1.05,
+          boxShadow: "0 0 25px var(--accent-pink)",
+          backgroundColor: "var(--accent-pink-dark)",
+          color: "#fff"
+        }}
         whileTap={{ scale: 0.95 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ 
+          opacity: 1, 
+          y: 0,
+          boxShadow: ["0 0 0px rgba(255, 182, 193, 0)", "0 0 20px rgba(255, 182, 193, 0.5)", "0 0 0px rgba(255, 182, 193, 0)"]
+        }}
+        transition={{ 
+          opacity: { duration: 0.8, delay: 0.5 },
+          y: { duration: 0.8, delay: 0.5 },
+          boxShadow: { duration: 2, repeat: Infinity }
+        }}
         style={{
           marginTop: '40px',
           display: 'inline-block',
-          padding: '12px 30px',
-          background: 'var(--accent-pink)',
-          color: 'white',
+          padding: '15px 40px',
+          background: 'transparent',
+          border: '2px solid var(--accent-pink)',
+          color: 'var(--accent-pink)',
           borderRadius: '30px',
           textDecoration: 'none',
           fontWeight: 'bold',
-          boxShadow: '0 4px 15px rgba(255, 107, 107, 0.4)'
+          fontSize: '1.1rem',
+          letterSpacing: '1px',
+          position: 'relative',
+          overflow: 'hidden'
         }}
       >
         Download Resume

@@ -96,7 +96,8 @@ const Projects = () => {
                         width: '100%', 
                         height: '100%', 
                         aspectRatio: '16/9',
-                        objectFit: 'cover',
+                        objectFit: 'contain',
+                        background: '#1a1a1a', // Dark background for letterboxing
                         display: 'block', 
                         transition: 'transform 0.5s' 
                       }}
