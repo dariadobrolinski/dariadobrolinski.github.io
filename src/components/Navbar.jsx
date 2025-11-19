@@ -47,68 +47,87 @@ const Navbar = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
 
   return (
-    <nav style={{
-      position: 'fixed',
-      right: '20px',
-      top: '50%',
-      transform: 'translateY(-50%)',
-      zIndex: 1000,
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '15px'
-    }}>
-      {navItems.map((item) => (
-        <div 
-          key={item.id}
-          onClick={() => scrollToSection(item.id)}
-          onMouseEnter={() => setHoveredItem(item.id)}
-          onMouseLeave={() => setHoveredItem(null)}
-          style={{
-            position: 'relative',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-end'
-          }}
-          className="nav-item"
-        >
-          <div style={{
-            position: 'absolute',
-            right: '50px',
-            background: 'rgba(0, 0, 0, 0.8)',
-            color: 'white',
-            padding: '5px 12px',
-            borderRadius: '5px',
-            fontSize: '0.9rem',
-            opacity: hoveredItem === item.id ? 1 : 0,
-            transform: hoveredItem === item.id ? 'translateX(0)' : 'translateX(10px)',
-            transition: 'all 0.3s ease',
-            whiteSpace: 'nowrap',
-            pointerEvents: 'none'
-          }}>
-            {item.label}
-          </div>
-          <motion.div
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            style={{
-              width: '40px',
-              height: '40px',
-              borderRadius: '50%',
-              background: activeSection === item.id ? 'var(--accent-pink)' : 'rgba(255, 255, 255, 0.1)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'white',
-              boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-              transition: 'background 0.3s'
-            }}
+    <>
+      <nav className="navbar-container">
+        {navItems.map((item) => (
+          <div 
+            key={item.id}
+            onClick={() => scrollToSection(item.id)}
+            onMouseEnter={() => setHoveredItem(item.id)}
+            onMouseLeave={() => setHoveredItem(null)}
+            className="nav-item-container"
           >
-            {item.icon}
-          </motion.div>
-        </div>
-      ))}
-    </nav>
+            <div className="nav-label" style={{
+              opacity: hoveredItem === item.id ? 1 : 0,
+              transform: hoveredItem === item.id ? 'translateX(0)' : 'translateX(10px)',
+            }}>
+              {item.label}
+            </div>
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              className="nav-icon"
+              style={{
+                background: activeSection === item.id ? 'var(--accent-pink)' : 'rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              {item.icon}
+            </motion.div>
+          </div>
+        ))}
+      </nav>
+      <style>{`
+        .navbar-container {
+          position: fixed;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 1000;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .nav-item-container {
+          position: relative;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+
+        .nav-label {
+          position: absolute;
+          right: 50px;
+          background: rgba(0, 0, 0, 0.8);
+          color: white;
+          padding: 5px 12px;
+          border-radius: 5px;
+          font-size: 0.9rem;
+          transition: all 0.3s ease;
+          white-space: nowrap;
+          pointer-events: none;
+        }
+
+        .nav-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          transition: background 0.3s;
+        }
+
+        @media (max-width: 768px) {
+          .navbar-container {
+            display: none !important;
+          }
+        }
+      `}</style>
+    </>
   );
 };
 
