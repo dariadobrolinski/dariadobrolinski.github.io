@@ -69,7 +69,16 @@ const About = () => {
                 >
                   UMass Boston
                 </a>{' '}
-                with a deep passion for web development, software engineering, and machine learning.
+                with a deep passion for web development, software engineering, and machine learning. This summer, I'll be joining{' '}
+                <a 
+                  href="https://www.lumen.com/en-us/home.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="link-accent"
+                >
+                  Lumen Technologies
+                </a>{' '}
+                as a Software Development Intern, where I'll be developing and deploying software solutions using Python and Java.
               </p>
               <p>
                 Currently, I'm honing my research skills at the{' '}
@@ -83,18 +92,9 @@ const About = () => {
                 </a>{' '}
                 where I work on cutting-edge 3D brain reconstruction methods, combining my technical expertise with meaningful scientific research.
               </p>
-            </div>
-
-            {/* Stats/highlights */}
-            <div className="grid grid-cols-2 gap-6 mt-10 pt-10 border-t border-white/10">
-              <div>
-                <span className="text-3xl font-bold text-accent">5+</span>
-                <p className="text-white/50 text-sm mt-1">Projects Completed</p>
-              </div>
-              <div>
-                <span className="text-3xl font-bold text-accent">2025</span>
-                <p className="text-white/50 text-sm mt-1">Research Assistant</p>
-              </div>
+              <p>
+                What drives me most is my love for learning new things.
+              </p>
             </div>
           </motion.div>
         </div>

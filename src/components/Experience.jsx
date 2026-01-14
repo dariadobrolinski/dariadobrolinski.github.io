@@ -2,6 +2,17 @@ import { motion } from 'framer-motion';
 
 const experiences = [
   {
+    title: "Software Development Intern",
+    company: "Lumen Technologies",
+    date: "May 2026 - August 2026",
+    details: [
+      "Will develop and deploy software solutions and data-driven reports using Python/Java, supporting business and platform decision-making.",
+      "Will collaborate with cross-functional teams to translate requirements into scalable applications while adapting to cloud, AI, and reporting technologies."
+    ],
+    current: false,
+    upcoming: true
+  },
+  {
     title: "Research Assistant",
     company: "University of Massachusetts Boston",
     date: "January 2025 - Present",
@@ -65,7 +76,7 @@ const Experience = () => {
               >
                 {/* Timeline dot */}
                 <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-accent rounded-full md:-translate-x-1/2 shadow-lg shadow-accent/50">
-                  {exp.current && (
+                  {(exp.current || exp.upcoming) && (
                     <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-50" />
                   )}
                 </div>
@@ -81,6 +92,11 @@ const Experience = () => {
                       {exp.current && (
                         <span className="px-3 py-1 text-xs bg-accent/10 text-accent rounded-full border border-accent/20">
                           Current
+                        </span>
+                      )}
+                      {exp.upcoming && (
+                        <span className="px-3 py-1 text-xs bg-accent/20 text-accent rounded-full border border-accent/30">
+                          Upcoming
                         </span>
                       )}
                     </div>

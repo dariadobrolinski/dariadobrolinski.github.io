@@ -98,18 +98,6 @@ const Awards = () => {
           transition={{ delay: 0.4 }}
           className="mt-16 grid md:grid-cols-3 gap-8 text-center"
         >
-          <div className="glass-card p-6">
-            <span className="text-3xl font-bold text-accent">6+</span>
-            <p className="text-white/60 text-sm mt-2">Technical Certifications</p>
-          </div>
-          <div className="glass-card p-6">
-            <span className="text-3xl font-bold text-accent">2</span>
-            <p className="text-white/60 text-sm mt-2">Biliteracy Seals</p>
-          </div>
-          <div className="glass-card p-6">
-            <span className="text-3xl font-bold text-accent">3</span>
-            <p className="text-white/60 text-sm mt-2">Languages Spoken</p>
-          </div>
         </motion.div>
       </div>
     </section>

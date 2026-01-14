@@ -8,7 +8,7 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     ),
-    skills: ["Python", "C", "Java", "JavaScript", "TypeScript", "MATLAB"]
+    skills: ["Python", "C", "Java", "JavaScript", "TypeScript", "MATLAB", "Kotlin"]
   },
   {
     title: "Frontend",

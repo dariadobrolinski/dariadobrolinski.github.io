@@ -8,6 +8,16 @@ const projects = [
     tags: ["Python", "FastAPI", "MongoDB", "Vertex AI", "Google Cloud"],
     github: "https://github.com/dariadobrolinski/elaraBackend",
     live: "https://elarafrontend-114195159699.us-east1.run.app/",
+    collaborator: { name: "Edward Gaibor", url: "https://edwardgaibor.me/" },
+    achievement: "3rd place in the GC × MongoDB hackathon out of 7k participants",
+    featured: true
+  },
+  {
+    title: "Brutal Notes",
+    description: "Built the backend for an offline-first note app using FastAPI, SQLAlchemy, and Supabase Auth with AI proofreading, summarization, and audio-to-notes features. Submitted to Google Chrome Built in AI Hackathon of 14k+ participants.",
+    tags: ["Python", "FastAPI", "SQLAlchemy", "Supabase", "AI"],
+    github: "https://github.com/dariadobrolinski/brutalNotesBackend",
+    live: "https://brutalnote.com/#",
     collaborator: { name: "Edward Gaibor", url: "https://edwardgaibor.me/" }
   },
   {
@@ -30,12 +40,6 @@ const projects = [
     tags: ["HTML", "CSS", "JavaScript", "Awareness"],
     github: "https://github.com/dariadobrolinski/embraceEveryYou",
     live: "http://dariadobrolinski.me/embraceEveryYou/"
-  },
-  {
-    title: "Automatic Irrigation System",
-    description: "Developed an Arduino-based irrigation system using soil moisture sensors and water pumps, reducing manual watering by over 50%. Engineered and 3D-printed a protective enclosure in Fusion 360.",
-    tags: ["Arduino", "C++", "Fusion 360", "3D Printing", "Hardware"],
-    github: "#"
   }
 ];
 
@@ -60,9 +64,33 @@ const ProjectCard = ({ project, index }) => {
         {/* Content */}
         <div className="relative z-20 flex flex-col flex-grow">
           {/* Title */}
-          <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 group-hover:text-accent transition-colors">
-            {project.title}
-          </h3>
+          <div className="flex items-center gap-2 mb-3">
+            <h3 className="text-xl md:text-2xl font-semibold text-white group-hover:text-accent transition-colors">
+              {project.title}
+            </h3>
+            {project.featured && (
+              <motion.svg
+                className="w-5 h-5 text-accent flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+              >
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </motion.svg>
+            )}
+          </div>
+
+          {/* Achievement */}
+          {project.achievement && (
+            <p className="text-accent text-sm font-medium mb-3 flex items-center gap-1">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              {project.achievement}
+            </p>
+          )}
 
           {/* Description */}
           <p className="text-white/60 text-sm md:text-base leading-relaxed mb-6 flex-grow">
