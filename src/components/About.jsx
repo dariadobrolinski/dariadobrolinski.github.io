@@ -3,86 +3,102 @@ import aboutImg from '../assets/about.jpg';
 
 const About = () => {
   return (
-    <section id="about" style={{
-      minHeight: '100vh',
-      padding: '100px 20px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: 'var(--bg-color)'
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        width: '100%',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '50px',
-        alignItems: 'center'
-      }}>
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div style={{ position: 'relative' }}>
-            <div style={{
-              position: 'absolute',
-              top: '20px',
-              left: '20px',
-              width: '100%',
-              height: '100%',
-              border: '2px solid var(--accent-pink)',
-              borderRadius: '10px',
-              zIndex: 0
-            }}></div>
-            <img 
-              src={aboutImg} 
-              alt="About Daria" 
-              style={{
-                width: '100%',
-                borderRadius: '10px',
-                position: 'relative',
-                zIndex: 1,
-                filter: 'grayscale(20%)',
-                transition: 'filter 0.3s'
-              }}
-              onMouseOver={(e) => e.currentTarget.style.filter = 'grayscale(0%)'}
-              onMouseOut={(e) => e.currentTarget.style.filter = 'grayscale(20%)'}
-            />
-          </div>
-        </motion.div>
+    <section id="about" className="section-padding bg-black relative overflow-hidden">
+      {/* Subtle background accent */}
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-y-1/2" />
+      
+      <div className="section-container relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative group max-w-xs md:max-w-sm lg:max-w-none mx-auto"
+          >
+            {/* Decorative frame */}
+            <div className="absolute -inset-3 md:-inset-4 border border-accent/20 rounded-2xl transform rotate-3 group-hover:rotate-0 transition-transform duration-500" />
+            <div className="absolute -inset-3 md:-inset-4 border border-accent/10 rounded-2xl transform -rotate-3 group-hover:rotate-0 transition-transform duration-500" />
+            
+            {/* Image container */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <img
+                src={aboutImg}
+                alt="Daria Dobrolinski"
+                className="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            </div>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <h2 style={{ 
-            fontSize: '3rem', 
-            marginBottom: '30px',
-            position: 'relative',
-            display: 'inline-block'
-          }}>
-            About <span style={{ color: 'var(--accent-pink)' }}>Me</span>
-          </h2>
-          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#ccc', marginBottom: '20px' }}>
-            I am a passionate Computer Science student at <a href="https://www.umb.edu/" target="_blank" rel="noopener noreferrer">UMass Boston</a> with a strong interest in web development, 
-            software engineering, and machine learning.
-          </p>
-          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#ccc' }}>
-            I have also developed research skills through my work at the <a href="https://www1.coe.neu.edu/~rampersad/index.html" target="_blank" rel="noopener noreferrer">BSS lab</a> where I am working on 3D brain reconstruction methods.
-          </p>
-        </motion.div>
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative"
+          >
+            {/* Section label */}
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-block text-accent text-sm tracking-widest uppercase mb-4"
+            >
+              About Me
+            </motion.span>
+
+            {/* Heading */}
+            <h2 className="heading-lg mb-6">
+              Passionate about creating
+              <span className="text-accent"> impactful</span> digital experiences
+            </h2>
+
+            {/* Description */}
+            <div className="space-y-4 text-white/70 text-lg leading-relaxed">
+              <p>
+                I'm a Computer Science student at{' '}
+                <a 
+                  href="https://www.umb.edu/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="link-accent"
+                >
+                  UMass Boston
+                </a>{' '}
+                with a deep passion for web development, software engineering, and machine learning.
+              </p>
+              <p>
+                Currently, I'm honing my research skills at the{' '}
+                <a 
+                  href="https://www1.coe.neu.edu/~rampersad/index.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="link-accent"
+                >
+                  BSS Lab
+                </a>{' '}
+                where I work on cutting-edge 3D brain reconstruction methods, combining my technical expertise with meaningful scientific research.
+              </p>
+            </div>
+
+            {/* Stats/highlights */}
+            <div className="grid grid-cols-2 gap-6 mt-10 pt-10 border-t border-white/10">
+              <div>
+                <span className="text-3xl font-bold text-accent">5+</span>
+                <p className="text-white/50 text-sm mt-1">Projects Completed</p>
+              </div>
+              <div>
+                <span className="text-3xl font-bold text-accent">2025</span>
+                <p className="text-white/50 text-sm mt-1">Research Assistant</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
-      <style>{`
-        @media (max-width: 768px) {
-          #about > div {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 };

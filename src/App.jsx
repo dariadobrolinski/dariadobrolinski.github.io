@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import Navbar from './components/Navbar'
+import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import About from './components/About'
 import Projects from './components/Projects'
@@ -11,8 +10,8 @@ import './index.css'
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
+    <div className="relative bg-black min-h-screen noise-overlay">
+      <Navigation />
       <main>
         <Hero />
         <About />
