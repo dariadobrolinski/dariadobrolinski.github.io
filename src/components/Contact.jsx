@@ -20,9 +20,6 @@ const Contact = () => {
           <h2 className="heading-lg mb-6">
             Let's <span className="text-accent">Connect</span>
           </h2>
-          <p className="text-white/60 max-w-xl mx-auto text-lg">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-          </p>
         </motion.div>
 
         {/* Contact Info */}
