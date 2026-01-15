@@ -179,10 +179,10 @@ const DancingLetters = ({
               if (definition === "active") handleAnimationComplete(idx);
             }}
             className={cn(
-              "relative inline-block text-5xl md:text-7xl lg:text-8xl font-bold text-white cursor-pointer",
+              "relative inline-block text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white cursor-pointer",
               letterClassName,
               isActive ? "z-10" : "z-0",
-              letter === " " ? "w-4 md:w-6" : ""
+              letter === " " ? "w-2 sm:w-3 md:w-4 lg:w-6" : ""
             )}
             style={{
               transformOrigin: anim.transformOrigin,

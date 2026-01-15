@@ -41,29 +41,29 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="section-padding bg-black relative overflow-hidden">
+    <section id="skills" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-black relative overflow-hidden">
       {/* Background accents */}
-      <div className="absolute top-1/2 left-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-0 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute bottom-0 right-1/4 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-accent/5 rounded-full blur-3xl" />
       
-      <div className="section-container relative z-10">
+      <div className="section-container relative z-10 px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <span className="inline-block text-accent text-sm tracking-widest uppercase mb-4">
+          <span className="inline-block text-accent text-xs sm:text-sm tracking-widest uppercase mb-3 sm:mb-4">
             Expertise
           </span>
-          <h2 className="heading-lg">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             Technical <span className="text-accent">Skills</span>
           </h2>
         </motion.div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
@@ -74,19 +74,21 @@ const Skills = () => {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <div className="glass-card p-6 h-full transition-all duration-300 hover:border-accent/30">
+              <div className="glass-card p-3 sm:p-4 md:p-6 h-full transition-all duration-300 hover:border-accent/30">
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-4 group-hover:bg-accent/20 transition-colors">
-                  {category.icon}
+                <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-2 sm:mb-3 md:mb-4 group-hover:bg-accent/20 transition-colors">
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+                    {category.icon}
+                  </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-white mb-4">
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white mb-2 sm:mb-3 md:mb-4">
                   {category.title}
                 </h3>
 
                 {/* Skills */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1 sm:gap-1.5 md:gap-2">
                   {category.skills.map((skill, i) => (
                     <motion.span
                       key={i}
@@ -94,7 +96,7 @@ const Skills = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 + i * 0.05 }}
-                      className="px-3 py-1.5 text-sm bg-white/5 text-white/70 rounded-full border border-white/10 hover:border-accent/30 hover:text-accent transition-all cursor-default"
+                      className="px-2 sm:px-2.5 md:px-3 py-0.5 sm:py-1 md:py-1.5 text-[10px] sm:text-xs md:text-sm bg-white/5 text-white/70 rounded-full border border-white/10 hover:border-accent/30 hover:text-accent transition-all cursor-default"
                     >
                       {skill}
                     </motion.span>
@@ -111,12 +113,12 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="mt-12 text-center"
+          className="mt-8 sm:mt-10 md:mt-12 text-center px-4"
         >
-          <p className="text-white/40 text-sm">
+          <p className="text-white/40 text-xs sm:text-sm">
             Also experienced with:{' '}
             <span className="text-white/60">
-              Arduino • 3D Printing • Fusion 360 • MediaPipe • OpenCV • Machine Learning
+              Arduino • 3D Printing • Fusion 360 • MediaPipe • OpenCV
             </span>
           </p>
         </motion.div>
