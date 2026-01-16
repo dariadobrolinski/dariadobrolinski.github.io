@@ -10,7 +10,8 @@ const projects = [
     live: "https://elarafrontend-114195159699.us-east1.run.app/",
     collaborator: { name: "Edward Gaibor", url: "https://edwardgaibor.me/" },
     achievement: "3rd place in the GC × MongoDB hackathon out of 7k participants",
-    featured: true
+    featured: true,
+    date: "06/2025"
   },
   {
     title: "Brutal Notes",
@@ -18,13 +19,22 @@ const projects = [
     tags: ["Python", "FastAPI", "SQLAlchemy", "Supabase", "AI"],
     github: "https://github.com/dariadobrolinski/brutalNotesBackend",
     live: "https://brutalnote.com/#",
-    collaborator: { name: "Edward Gaibor", url: "https://edwardgaibor.me/" }
+    collaborator: { name: "Edward Gaibor", url: "https://edwardgaibor.me/" },
+    date: "11/2025"
+  },
+  {
+    title: "Prettied with Paige – Business Site",
+    description: "Built a business portfolio site for a hairdresser using Next.js 16, React 19, TypeScript, and Tailwind CSS with Supabase integration, featuring a portfolio gallery, customer reviews with ratings, an inquiry form for potential clients, and a password-protected admin panel for managing reviews.",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase"],
+    live: "https://www.prettiedwithpaige.hair/",
+    date: "01/2026"
   },
   {
     title: "ASL Recognition with TTS",
     description: "Built a real-time ASL recognition system using Python, MediaPipe, Random Forest classifier, and OpenCV featuring custom dataset collection and text-to-speech integration for accessible ASL-to-audio translation.",
     tags: ["Python", "MediaPipe", "OpenCV", "Machine Learning", "TTS"],
-    github: "https://github.com/dariadobrolinski/ASLrecognition"
+    github: "https://github.com/dariadobrolinski/ASLrecognition",
+    date: "04/2025"
   },
   {
     title: "Myndavals",
@@ -32,14 +42,16 @@ const projects = [
     tags: ["HTML/CSS", "Python", "Flask", "Web App"],
     github: "https://github.com/dariadobrolinski/myndavalsShare",
     live: "https://sharefavorites-billowing-darkness-1530.fly.dev/",
-    collaborator: { name: "Edward Gaibor", url: "https://edwardgaibor.me/" }
+    collaborator: { name: "Edward Gaibor", url: "https://edwardgaibor.me/" },
+    date: "02/2025"
   },
   {
     title: "Embrace Every You",
     description: "A website dedicated to raising awareness and providing information about anorexia nervosa, including symptoms, treatment options, and support resources.",
     tags: ["HTML", "CSS", "JavaScript", "Awareness"],
     github: "https://github.com/dariadobrolinski/embraceEveryYou",
-    live: "http://dariadobrolinski.me/embraceEveryYou/"
+    live: "http://dariadobrolinski.me/embraceEveryYou/",
+    date: "01/2025"
   }
 ];
 
@@ -65,9 +77,16 @@ const ProjectCard = ({ project, index }) => {
         <div className="relative z-20 flex flex-col flex-grow">
           {/* Title */}
           <div className="flex items-start sm:items-center gap-2 mb-2 sm:mb-3">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white group-hover:text-accent transition-colors">
-              {project.title}
-            </h3>
+            <div className="flex-1">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white group-hover:text-accent transition-colors">
+                {project.title}
+              </h3>
+              {project.date && (
+                <p className="text-white/40 text-xs sm:text-sm mt-1">
+                  {project.date}
+                </p>
+              )}
+            </div>
             {project.featured && (
               <motion.svg
                 className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0 mt-1 sm:mt-0"
