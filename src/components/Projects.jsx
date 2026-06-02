@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { GiArchiveResearch } from 'react-icons/gi';
 import { Spotlight } from './Spotlight';
 
 const projects = [
@@ -14,13 +16,12 @@ const projects = [
     date: "06/2025"
   },
   {
-    title: "Brutal Notes",
-    description: "Built the backend for an offline-first note app using FastAPI, SQLAlchemy, and Supabase Auth with AI proofreading, summarization, and audio-to-notes features. Submitted to Google Chrome Built in AI Hackathon of 14k+ participants.",
-    tags: ["Python", "FastAPI", "SQLAlchemy", "Supabase", "AI"],
-    github: "https://github.com/dariadobrolinski/brutalNotesBackend",
-    live: "https://brutalnote.com/#",
-    collaborator: { name: "Edward Gaibor", url: "https://edwardgaibor.me/" },
-    date: "11/2025"
+    title: "Cortical Surface Reconstruction Pipeline",
+    description: "Refactoring and extending a MATLAB pipeline that uses Spherical Harmonic analysis to reconstruct and systematically vary cortical brain surfaces from FreeSurfer MRI data, generating morphologically diverse head models for TMS/tDCS stimulation research.",
+    tags: ["MATLAB", "Spherical Harmonics", "Neuroimaging", "FreeSurfer", "TMS/tDCS"],
+    poster: "/images/research_poster.pdf",
+    linkLabel: "Research Poster",
+    date: "02/2025 - Present"
   },
   {
     title: "Prettied with Paige – Business Site",
@@ -28,6 +29,15 @@ const projects = [
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase"],
     live: "https://www.prettiedwithpaige.hair/",
     date: "01/2026"
+  },
+  {
+    title: "Brutal Notes",
+    description: "Built the backend for an offline-first note app using FastAPI, SQLAlchemy, and Supabase Auth with AI proofreading, summarization, and audio-to-notes features. Submitted to Google Chrome Built in AI Hackathon of 14k+ participants.",
+    tags: ["Python", "FastAPI", "SQLAlchemy", "Supabase", "AI"],
+    github: "https://github.com/dariadobrolinski/brutalNotesBackend",
+    live: "https://brutalnote.com/#",
+    collaborator: { name: "Edward Gaibor", url: "https://edwardgaibor.me/" },
+    date: "11/2025"
   },
   {
     title: "ASL Recognition with TTS",
@@ -56,6 +66,21 @@ const projects = [
 ];
 
 const ProjectCard = ({ project, index }) => {
+  const [isPosterOpen, setIsPosterOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isPosterOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsPosterOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isPosterOpen]);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -143,7 +168,17 @@ const ProjectCard = ({ project, index }) => {
                 View Code
               </a>
             )}
-            {project.live && (
+            {project.poster && (
+              <button
+                type="button"
+                onClick={() => setIsPosterOpen(true)}
+                className="flex items-center gap-1.5 sm:gap-2 text-white/60 hover:text-accent transition-colors text-xs sm:text-sm"
+              >
+                <GiArchiveResearch className="w-4 h-4 sm:w-5 sm:h-5" />
+                {project.linkLabel || "View Poster"}
+              </button>
+            )}
+            {project.live && !project.poster && (
               <a
                 href={project.live}
                 target="_blank"
@@ -153,7 +188,7 @@ const ProjectCard = ({ project, index }) => {
                 <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-                Live Demo
+                {project.linkLabel || "Live Demo"}
               </a>
             )}
           </div>
@@ -174,6 +209,34 @@ const ProjectCard = ({ project, index }) => {
           )}
         </div>
       </div>
+
+      {project.poster && isPosterOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${project.title} poster`}
+          onClick={() => setIsPosterOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-4xl h-[80vh] rounded-xl bg-black border border-white/10 overflow-hidden"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setIsPosterOpen(false)}
+              className="absolute top-3 right-3 z-10 rounded-full bg-white/10 text-white/70 hover:text-white hover:bg-white/20 transition-colors px-3 py-1 text-xs"
+            >
+              Close
+            </button>
+            <iframe
+              title={`${project.title} poster`}
+              src={project.poster}
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      )}
     </motion.div>
   );
 };

@@ -18,8 +18,8 @@ const experiences = [
     date: "January 2025 - Present",
     details: [
       "Refactoring a MATLAB codebase by modularizing functions and adding clear docs/tests, making the cortical-mesh pipeline easier to read, run, and extend.",
-      "Utilize MATLAB and mesh processing tools to create precise surface and volume models for improved geometric detail in MRI-based reconstructions.",
-      "Implement advanced algorithms to adjust sulci and gyri widths, aiming to reduce data loss and support more accurate biomedical research."
+      "Apply Spherical Harmonic (SPHARM) decomposition to reconstruct high-fidelity cortical surface meshes from FreeSurfer MRI outputs for both hemispheres.",
+      "Develop algorithms to systematically vary sulcal and gyral widths across controlled factor ranges, generating reconstructed brain surfaces for downstream TMS/tDCS stimulation simulations."
     ],
     current: true
   },
