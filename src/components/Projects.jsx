@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { GiArchiveResearch } from 'react-icons/gi';
 import { Spotlight } from './Spotlight';
 
@@ -210,32 +211,38 @@ const ProjectCard = ({ project, index }) => {
         </div>
       </div>
 
-      {project.poster && isPosterOpen && (
+      {project.poster && isPosterOpen && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80"
           role="dialog"
           aria-modal="true"
           aria-label={`${project.title} poster`}
           onClick={() => setIsPosterOpen(false)}
         >
           <div
-            className="relative w-full max-w-4xl h-[80vh] rounded-xl bg-black border border-white/10 overflow-hidden"
+            className="w-full max-w-4xl mx-4 flex flex-col rounded-xl overflow-hidden border border-white/10 max-h-[calc(100dvh-2rem)]"
             onClick={(event) => event.stopPropagation()}
           >
-            <button
-              type="button"
-              onClick={() => setIsPosterOpen(false)}
-              className="absolute top-3 right-3 z-10 rounded-full bg-white/10 text-white/70 hover:text-white hover:bg-white/20 transition-colors px-3 py-1 text-xs"
-            >
-              Close
-            </button>
-            <iframe
-              title={`${project.title} poster`}
-              src={project.poster}
-              className="w-full h-full"
-            />
+            <div className="flex items-center justify-between px-4 py-2 bg-zinc-900 border-b border-white/10 flex-shrink-0">
+              <span className="text-white/60 text-xs">{project.title}</span>
+              <button
+                type="button"
+                onClick={() => setIsPosterOpen(false)}
+                className="rounded-full bg-white/10 text-white/70 hover:text-white hover:bg-white/20 transition-colors px-4 py-1.5 text-sm font-medium"
+              >
+                Close
+              </button>
+            </div>
+            <div className="overflow-auto">
+              <iframe
+                title={`${project.title} poster`}
+                src={`${project.poster}#toolbar=0&view=FitH`}
+                style={{ width: '100%', aspectRatio: '4/3', display: 'block' }}
+              />
+            </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </motion.div>
   );
