@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-
-=======
 # Personal Portfolio
 
 Welcome to my personal portfolio — a full rebuild of my original static site, now a modern React application.
+<img width="1163" height="705" alt="image" src="https://github.com/user-attachments/assets/7c250ee0-debe-4287-8a1c-6f34f360c0e5" />
 
 ## About
 
@@ -40,17 +38,5 @@ This portfolio highlights my projects, experience, skills, and achievements as a
 6. **Myndavals** — Flask web app for sharing images and collecting friend votes
 7. **Embrace Every You** — Awareness website about anorexia nervosa with resources and support information
 
-## Deployment
-
-The site deploys to GitHub Pages via the `gh-pages` package:
-
-```bash
-npm run deploy
-```
-
 ## Contact
-
-- **Email**: [dsdobrolinski@gmail.com](mailto:dsdobrolinski@gmail.com)
 - **LinkedIn**: [Daria Dobrolinski](https://www.linkedin.com/in/daria-dobrolinski/)
-- **GitHub**: [dariadobrolinski](https://github.com/dariadobrolinski)
->>>>>>> 54d90db (feat: Revamp portfolio readme with detailed sections and project highlights)
