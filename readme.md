@@ -1,6 +1,6 @@
-# Personal Portfolio
+# Welcome to my personal portfolio!
 
-Welcome to my personal portfolio — a full rebuild of my original static site, now a modern React application.
+A full rebuild of my original static site, now a modern React application.
 <img width="1163" height="705" alt="image" src="https://github.com/user-attachments/assets/7c250ee0-debe-4287-8a1c-6f34f360c0e5" />
 
 ## About
