@@ -6,8 +6,7 @@ const experiences = [
     company: "Lumen Technologies",
     date: "May 2026 - August 2026",
     details: [
-      "Will develop and deploy software solutions and data-driven reports using Python/Java, supporting business and platform decision-making.",
-      "Will collaborate with cross-functional teams to translate requirements into scalable applications while adapting to cloud, AI, and reporting technologies."
+      "Developing automation tooling for secrets rotation and data-driven reporting pipelines using MongoDB Compass and Datadog."
     ],
     current: true,
     upcoming: false
