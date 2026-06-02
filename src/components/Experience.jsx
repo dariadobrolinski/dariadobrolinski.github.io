@@ -9,8 +9,8 @@ const experiences = [
       "Will develop and deploy software solutions and data-driven reports using Python/Java, supporting business and platform decision-making.",
       "Will collaborate with cross-functional teams to translate requirements into scalable applications while adapting to cloud, AI, and reporting technologies."
     ],
-    current: false,
-    upcoming: true
+    current: true,
+    upcoming: false
   },
   {
     title: "Research Assistant",

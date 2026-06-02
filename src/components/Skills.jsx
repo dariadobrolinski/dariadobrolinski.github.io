@@ -1,15 +1,7 @@
 import { motion } from 'framer-motion';
+import { GoTools } from 'react-icons/go';
 
 const skillCategories = [
-  {
-    title: "Languages",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-      </svg>
-    ),
-    skills: ["Python", "C", "Java", "JavaScript", "TypeScript", "MATLAB", "Kotlin"]
-  },
   {
     title: "Frontend",
     icon: (
@@ -17,25 +9,49 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    skills: ["React", "HTML/CSS", "Tailwind", "Figma"]
+    skills: ["React", "TypeScript", "HTML", "CSS", "Figma", "Tailwind"]
   },
   {
-    title: "Backend & DB",
+    title: "Backend",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
       </svg>
     ),
-    skills: ["FastAPI", "MongoDB", "SQLAlchemy", "Supabase"]
+    skills: ["FastAPI", "Go", "MongoDB", "SQLAlchemy", "Supabase"]
   },
   {
-    title: "Tools & Cloud",
+    title: "Programming Languages",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+    skills: ["Python", "C", "Java", "Go", "MATLAB", "JavaScript", "TypeScript", "Kotlin"]
+  },
+  {
+    title: "Machine Learning",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 6h4v4H6zM14 6h4v4h-4zM6 14h4v4H6zM14 14h4v4h-4z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 8h4M10 16h4M8 10v4M16 10v4" />
+      </svg>
+    ),
+    skills: ["MediaPipe", "Random Forest", "OpenCV"]
+  },
+  {
+    title: "Tools",
+    icon: <GoTools className="w-6 h-6" />,
+    skills: ["Git", "VS Code", "Docker", "AutoCAD", "SimNIBS", "FreeSurfer", "SCIRun"]
+  },
+  {
+    title: "Cloud",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
       </svg>
     ),
-    skills: ["Git", "Docker", "VS Code", "Google Cloud", "Vertex AI"]
+    skills: ["Google Cloud", "Vertex AI", "Cloud Run", "Cloud Storage"]
   }
 ];
 
@@ -63,7 +79,7 @@ const Skills = () => {
         </motion.div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
@@ -77,7 +93,7 @@ const Skills = () => {
               <div className="glass-card p-3 sm:p-4 md:p-6 h-full transition-all duration-300 hover:border-accent/30">
                 {/* Icon */}
                 <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-2 sm:mb-3 md:mb-4 group-hover:bg-accent/20 transition-colors">
-                  <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex items-center justify-center">
                     {category.icon}
                   </div>
                 </div>
@@ -106,22 +122,6 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Additional Skills Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-8 sm:mt-10 md:mt-12 text-center px-4"
-        >
-          <p className="text-white/40 text-xs sm:text-sm">
-            Also experienced with:{' '}
-            <span className="text-white/60">
-              Arduino • 3D Printing • Fusion 360 • MediaPipe • OpenCV
-            </span>
-          </p>
-        </motion.div>
       </div>
     </section>
   );

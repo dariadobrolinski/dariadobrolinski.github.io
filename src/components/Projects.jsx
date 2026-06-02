@@ -16,7 +16,7 @@ const projects = [
     date: "06/2025"
   },
   {
-    title: "Cortical Surface Reconstruction Pipeline",
+    title: "Cortical Geometry Effects on tCS Electric Field Estimate",
     description: "Refactoring and extending a MATLAB pipeline that uses Spherical Harmonic analysis to reconstruct and systematically vary cortical brain surfaces from FreeSurfer MRI data, generating morphologically diverse head models for TMS/tDCS stimulation research.",
     tags: ["MATLAB", "Spherical Harmonics", "Neuroimaging", "FreeSurfer", "TMS/tDCS"],
     poster: "/images/research_poster.pdf",

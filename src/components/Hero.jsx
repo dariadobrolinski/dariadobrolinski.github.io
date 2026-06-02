@@ -1,8 +1,24 @@
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import DancingLetters from './dancing-letters';
 import { InteractiveGridBackground } from './interactive-grid-background';
 
 const Hero = () => {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isResumeOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsResumeOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isResumeOpen]);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Interactive Grid Background */}
@@ -64,9 +80,9 @@ const Hero = () => {
               transition={{ delay: 1 }}
               className="flex flex-col items-center justify-center gap-3 sm:gap-4"
             >
-              <motion.a
-                href="/images/daria-dobrolinski.pdf"
-                download
+              <motion.button
+                type="button"
+                onClick={() => setIsResumeOpen(true)}
                 className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 overflow-hidden rounded-full"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -80,9 +96,9 @@ const Hero = () => {
                   <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
-                  Download Resume
+                  View Resume
                 </span>
-              </motion.a>
+              </motion.button>
 
               <motion.button
                 onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
@@ -99,6 +115,34 @@ const Hero = () => {
 
         </div>
       </InteractiveGridBackground>
+
+      {isResumeOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Resume"
+          onClick={() => setIsResumeOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-4xl h-[80vh] rounded-xl bg-black border border-white/10 overflow-hidden"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setIsResumeOpen(false)}
+              className="absolute top-3 right-3 z-10 rounded-full bg-white/10 text-white/70 hover:text-white hover:bg-white/20 transition-colors px-3 py-1 text-xs"
+            >
+              Close
+            </button>
+            <iframe
+              title="Resume"
+              src="/images/daria_dobrolinski.pdf"
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Gradient overlay at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
