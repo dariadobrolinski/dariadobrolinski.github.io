@@ -6,7 +6,7 @@ const experiences = [
     company: "Lumen Technologies",
     date: "May 2026 - August 2026",
     details: [
-      "Developing automation tooling for secrets rotation and data-driven reporting pipelines using MongoDB Compass and Datadog."
+      "Building and maintaining a Terraform-based Datadog monitoring framework for 18+ services, standardizing CPU, latency, traffic and DB pool alerts with reusable modules and service-specifc overrides."
     ],
     current: true,
     upcoming: false
