@@ -6,7 +6,8 @@ const experiences = [
     company: "Lumen Technologies",
     date: "May 2026 - August 2026",
     details: [
-      "Building and maintaining a Terraform-based Datadog monitoring framework for 18+ services, standardizing CPU, latency, traffic and DB pool alerts with reusable modules and service-specifc overrides."
+      "Built a Terraform-based Datadog monitoring framework across 18+ services with reusable modules and a Python CLI, reducing monitor setup from 30-120 minutes to about 2 minutes per service.",
+      "Designed multi-cloud secret-rotation automation across AWS, Azure, GCP, and Oracle to standardize security workflows and reduce credential-related downtime risk."
     ],
     current: true,
     upcoming: false

@@ -141,7 +141,7 @@ const Hero = () => {
             <div className="overflow-auto">
               <iframe
                 title="Resume"
-                src="/images/daria_dobrolinski.pdf#toolbar=0&view=FitH"
+                src="/images/daria-dobrolinski.pdf#toolbar=0&view=FitH"
                 style={{ width: '100%', aspectRatio: '8.5/11', display: 'block' }}
               />
             </div>

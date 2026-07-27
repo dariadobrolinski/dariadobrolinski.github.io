@@ -3,6 +3,15 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
+      title: "Software Development Intern",
+      company: "Lumen Technologies",
+      date: "May 2026 - August 2026",
+      details: [
+        "Built a Terraform-based Datadog monitoring framework across 18+ services with reusable modules and a Python CLI, reducing monitor setup from 30-120 minutes to about 2 minutes per service.",
+        "Designed multi-cloud secret-rotation automation across AWS, Azure, GCP, and Oracle to standardize security workflows and reduce credential-related downtime risk."
+      ]
+    },
+    {
       title: "Research Assistant",
       company: "University of Massachusetts Boston",
       date: "January 2025 - Present",
