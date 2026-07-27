@@ -21,7 +21,7 @@ const Skills = () => {
     {
       title: "Tools & Cloud",
       icon: <FaCloud />,
-      skills: ["Git", "Docker", "VS Code", "Google Cloud (Vertex AI, Cloud Run, Cloud Storage)"]
+      skills: ["Git", "Docker", "VS Code", "Google Cloud (Cloud Run, Cloud Storage)", "Vertex AI", "Terraform", "Datadog"]
     }
   ];
 

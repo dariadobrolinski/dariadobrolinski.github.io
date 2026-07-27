@@ -251,12 +251,9 @@
             </div>
             <div class="timeline-body">
               <ul>
-                <li>Refactoring a MATLAB codebase by modularizing functions and adding clear docs/tests, making the 
-                  cortical-mesh pipeline easier to read, run, and extend.</li>
-                <li>Utilize MATLAB and mesh processing tools to create precise surface and volume models for improved geometric detail in 
-                  MRI-based reconstructions.</li>
-                <li>Implement advanced algorithms to adjust sulci and gyri widths, aiming to reduce data loss and support more accurate 
-                  biomedical research.</li>
+                <li>Developing an end-to-end FEM head-modeling pipeline that corrects MRI partial-volume loss using SPHARM-based gyral-width scaling to produce anatomically accurate tetrahedral meshes for transcranial current stimulation.</li>
+                <li>Building surface-repair and volume-meshing stages by reconstructing self-intersecting SPHARM surfaces and stacking corrected GM/WM layers with other head tissues into TetGen-ready meshes for <a href="https://github.com/SCIInstitute/SCIRun" target="_blank" rel="noopener noreferrer">SCIRun</a> field simulation.</li>
+                <li>Improving <a href="https://github.com/kenichi-maeda/fixmesh" target="_blank" rel="noopener noreferrer">fixmesh</a>, a Python mesh-repair library wrapping PyMesh, PyMeshFix, and MeshLib, to resolve self-intersections through cutting, detaching, and local remeshing strategies.</li>
               </ul>
             </div>
           </div>
@@ -309,6 +306,10 @@
               <li>MongoDB</li>
               <li>FastAPI</li>
               <li>Flask</li>
+              <li>Google Cloud (Cloud Run, Cloud Storage)</li>
+              <li>Vertex AI</li>
+              <li>Terraform</li>
+              <li>Datadog</li>
             </ul>
           </div>
         </div>

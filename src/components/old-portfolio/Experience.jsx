@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 
+const MotionH2 = motion.h2;
+const MotionDiv = motion.div;
+
 const Experience = () => {
   const experiences = [
     {
@@ -16,9 +19,31 @@ const Experience = () => {
       company: "University of Massachusetts Boston",
       date: "January 2025 - Present",
       details: [
-        "Refactoring a MATLAB codebase by modularizing functions and adding clear docs/tests, making the cortical-mesh pipeline easier to read, run, and extend.",
-        "Utilize MATLAB and mesh processing tools to create precise surface and volume models for improved geometric detail in MRI-based reconstructions.",
-        "Implement advanced algorithms to adjust sulci and gyri widths, aiming to reduce data loss and support more accurate biomedical research."
+        "Developing an end-to-end FEM head-modeling pipeline that corrects MRI partial-volume loss using SPHARM-based gyral-width scaling to produce anatomically accurate tetrahedral meshes for transcranial current stimulation.",
+        <>
+          Building surface-repair and volume-meshing stages by reconstructing self-intersecting SPHARM surfaces and stacking corrected GM/WM layers with other head tissues into TetGen-ready meshes for{' '}
+          <a
+            href="https://github.com/SCIInstitute/SCIRun"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--accent-pink)', textDecoration: 'underline' }}
+          >
+            SCIRun
+          </a>{' '}
+          field simulation.
+        </>,
+        <>
+          Improving{' '}
+          <a
+            href="https://github.com/kenichi-maeda/fixmesh"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--accent-pink)', textDecoration: 'underline' }}
+          >
+            fixmesh
+          </a>
+          , a Python mesh-repair library wrapping PyMesh, PyMeshFix, and MeshLib, to resolve self-intersections through cutting, detaching, and local remeshing strategies.
+        </>
       ]
     },
     {
@@ -38,14 +63,14 @@ const Experience = () => {
       background: 'var(--bg-color)'
     }}>
       <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-        <motion.h2 
+        <MotionH2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           style={{ fontSize: '3rem', textAlign: 'center', marginBottom: '60px', color: 'var(--accent-pink-dark)' }}
         >
           Work Experience
-        </motion.h2>
+        </MotionH2>
 
         <div style={{ position: 'relative', paddingLeft: '20px' }}>
           {/* Vertical Line */}
@@ -60,7 +85,7 @@ const Experience = () => {
           }}></div>
 
           {experiences.map((exp, index) => (
-            <motion.div
+            <MotionDiv
               key={index}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -102,7 +127,7 @@ const Experience = () => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
       </div>

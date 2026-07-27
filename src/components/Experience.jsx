@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 
+const MotionDiv = motion.div;
+
 const experiences = [
   {
     title: "Software Development Intern",
@@ -17,9 +19,31 @@ const experiences = [
     company: "University of Massachusetts Boston",
     date: "January 2025 - Present",
     details: [
-      "Refactoring a MATLAB codebase by modularizing functions and adding clear docs/tests, making the cortical-mesh pipeline easier to read, run, and extend.",
-      "Apply Spherical Harmonic (SPHARM) decomposition to reconstruct high-fidelity cortical surface meshes from FreeSurfer MRI outputs for both hemispheres.",
-      "Develop algorithms to systematically vary sulcal and gyral widths across controlled factor ranges, generating reconstructed brain surfaces for downstream TMS/tDCS stimulation simulations."
+      "Developing an end-to-end FEM head-modeling pipeline that corrects MRI partial-volume loss using SPHARM-based gyral-width scaling to produce anatomically accurate tetrahedral meshes for transcranial current stimulation.",
+      <>
+        Building surface-repair and volume-meshing stages by reconstructing self-intersecting SPHARM surfaces and stacking corrected GM/WM layers with other head tissues into TetGen-ready meshes for{' '}
+        <a
+          href="https://github.com/SCIInstitute/SCIRun"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent hover:text-accent-light underline underline-offset-2"
+        >
+          SCIRun
+        </a>{' '}
+        field simulation.
+      </>,
+      <>
+        Improving{' '}
+        <a
+          href="https://github.com/kenichi-maeda/fixmesh"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent hover:text-accent-light underline underline-offset-2"
+        >
+          fixmesh
+        </a>
+        , a Python mesh-repair library wrapping PyMesh, PyMeshFix, and MeshLib, to resolve self-intersections through cutting, detaching, and local remeshing strategies.
+      </>
     ],
     current: true
   },
@@ -43,7 +67,7 @@ const Experience = () => {
       
       <div className="section-container relative z-10 px-4 sm:px-6">
         {/* Section Header */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -55,7 +79,7 @@ const Experience = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             Experience & <span className="text-accent">Education</span>
           </h2>
-        </motion.div>
+        </MotionDiv>
 
         {/* Timeline */}
         <div className="max-w-3xl mx-auto">
@@ -64,7 +88,7 @@ const Experience = () => {
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent via-accent/50 to-transparent md:-translate-x-1/2" />
 
             {experiences.map((exp, index) => (
-              <motion.div
+              <MotionDiv
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -111,7 +135,7 @@ const Experience = () => {
                               <circle cx="4" cy="4" r="3" />
                             </svg>
                           </span>
-                          {detail}
+                          <span className="min-w-0 leading-relaxed">{detail}</span>
                         </li>
                       ))}
                     </ul>
@@ -120,7 +144,7 @@ const Experience = () => {
 
                 {/* Empty space for alternating layout */}
                 <div className="hidden md:block md:w-1/2" />
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
         </div>
