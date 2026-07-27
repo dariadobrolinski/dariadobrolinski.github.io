@@ -225,13 +225,22 @@ const ProjectCard = ({ project, index }) => {
           >
             <div className="flex items-center justify-between px-4 py-2 bg-zinc-900 border-b border-white/10 flex-shrink-0">
               <span className="text-white/60 text-xs">{project.title}</span>
-              <button
-                type="button"
-                onClick={() => setIsPosterOpen(false)}
-                className="rounded-full bg-white/10 text-white/70 hover:text-white hover:bg-white/20 transition-colors px-4 py-1.5 text-sm font-medium"
-              >
-                Close
-              </button>
+              <div className="flex items-center gap-2">
+                <a
+                  href={project.poster}
+                  download
+                  className="rounded-full bg-accent/20 text-accent hover:bg-accent/30 transition-colors px-4 py-1.5 text-sm font-medium"
+                >
+                  Download
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setIsPosterOpen(false)}
+                  className="rounded-full bg-white/10 text-white/70 hover:text-white hover:bg-white/20 transition-colors px-4 py-1.5 text-sm font-medium"
+                >
+                  Close
+                </button>
+              </div>
             </div>
             <div className="overflow-auto">
               <iframe
