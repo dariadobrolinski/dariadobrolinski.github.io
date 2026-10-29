@@ -339,6 +339,13 @@ const Projects = () => {
     setShowAll(false);
   };
 
+  // Lets other sections (e.g. Experience) jump straight to the Research tab
+  useEffect(() => {
+    const showResearch = () => selectTab("research");
+    window.addEventListener('show-research-projects', showResearch);
+    return () => window.removeEventListener('show-research-projects', showResearch);
+  }, []);
+
   return (
     <section id="projects" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-black relative overflow-hidden">
       {/* Background accent */}

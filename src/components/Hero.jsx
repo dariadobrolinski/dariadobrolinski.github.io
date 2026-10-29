@@ -70,7 +70,7 @@ const Hero = () => {
               className="mb-8 sm:mb-10"
             >
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 font-light tracking-wide">
-                Full Stack Developer
+                Full Stack Developer & Undergraduate Researcher
               </p>
             </motion.div>
 

@@ -1,71 +1,67 @@
 import { motion } from 'framer-motion';
+import { FaCode } from 'react-icons/fa';
+import { FiBookOpen, FiUsers } from 'react-icons/fi';
+import { GiBrain } from 'react-icons/gi';
 
-const MotionDiv = motion.div;
+const MotionLi = motion.li;
+
+const linkClass = "text-accent hover:text-accent-light underline underline-offset-2";
 
 const experiences = [
   {
     title: "Software Development",
     company: "Lumen Technologies",
-    date: "August 2026 - Present",
-    details: [
-      "Contributing to MITCH, a telecommunications service-automation platform that modernizes legacy ARM inventory APIs by routing requests to modern services and transforming responses into backward-compatible contracts."
-    ],
-    current: true,
-    upcoming: false
+    date: "Aug 2026 – Present",
+    icon: FaCode,
+    description: "Modernizing legacy ARM inventory APIs on MITCH, a telecom service-automation platform, by routing requests to modern services with backward-compatible responses."
   },
   {
     title: "Software Development Intern",
     company: "Lumen Technologies",
-    date: "May 2026 - August 2026",
-    details: [
-      "Built a Terraform-based Datadog monitoring framework across 18+ services with reusable modules and a Python CLI, reducing monitor setup from 30-120 minutes to about 2 minutes per service.",
-      "Designed multi-cloud secret-rotation automation across AWS, Azure, GCP, and Oracle to standardize security workflows and reduce credential-related downtime risk."
-    ],
-    current: false,
-    upcoming: false
+    date: "May 2026 – Aug 2026",
+    icon: FaCode,
+    description: "Built a Terraform-based Datadog monitoring framework for 18+ services that cut monitor setup from up to 2 hours to ~2 minutes, and automated multi-cloud secret rotation across AWS, Azure, GCP, and Oracle."
+  },
+  {
+    title: "Course Assistant",
+    company: "University of Massachusetts Boston",
+    date: "Feb 2026 – Present",
+    icon: FiUsers,
+    description: "Hold office hours and run plagiarism checks for CS 210: Intermediate Computing with Data Structures."
   },
   {
     title: "Research Assistant",
-    company: "University of Massachusetts Boston",
-    date: "January 2025 - Present",
-    details: [
-      "Developing an end-to-end FEM head-modeling pipeline that corrects MRI partial-volume loss using SPHARM-based gyral-width scaling to produce anatomically accurate tetrahedral meshes for transcranial current stimulation.",
+    company: (
       <>
-        Building surface-repair and volume-meshing stages by reconstructing self-intersecting SPHARM surfaces and stacking corrected GM/WM layers with other head tissues into TetGen-ready meshes for{' '}
-        <a
-          href="https://github.com/SCIInstitute/SCIRun"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-accent hover:text-accent-light underline underline-offset-2"
-        >
+        <a href="https://www1.coe.neu.edu/~rampersad/index.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-accent-light">
+          BSS Lab
+        </a>
+        {' · '}University of Massachusetts Boston
+      </>
+    ),
+    date: "Jan 2025 – Present",
+    icon: GiBrain,
+    description: (
+      <>
+        Building a head-modeling pipeline that corrects MRI partial-volume loss via SPHARM-based gyral-width scaling, and extending the open-source mesh-repair library{' '}
+        <a href="https://github.com/dariadobrolinski/fixmesh" target="_blank" rel="noopener noreferrer" className={linkClass}>
+          fixmesh
+        </a>{' '}
+        to fix self-intersecting surfaces and produce TetGen-ready meshes for{' '}
+        <a href="https://github.com/SCIInstitute/SCIRun" target="_blank" rel="noopener noreferrer" className={linkClass}>
           SCIRun
         </a>{' '}
-        field simulation.
-      </>,
-      <>
-        Improving{' '}
-        <a
-          href="https://github.com/kenichi-maeda/fixmesh"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-accent hover:text-accent-light underline underline-offset-2"
-        >
-          fixmesh
-        </a>
-        , a Python mesh-repair library wrapping PyMesh, PyMeshFix, and MeshLib, to resolve self-intersections through cutting, detaching, and local remeshing strategies.
+        brain-stimulation simulations.
       </>
-    ],
-    current: true
+    ),
+    researchLink: true
   },
   {
-    title: "Undergraduate Student",
+    title: "B.S. Computer Science",
     company: "University of Massachusetts Boston",
-    date: "January 2024 - May 2027",
-    details: [
-      "On track to receive a Bachelor of Science in Computer Science.",
-      "Completed courses including Data Structures, Algorithms, Calculus 1 & 2, Physics 1 & 2, Discrete Math, and Introduction to Electrical & Computer Engineering."
-    ],
-    current: true
+    date: "Jan 2024 – May 2027",
+    icon: FiBookOpen,
+    description: "Coursework includes Data Structures, Algorithms, Discrete Math, Calculus 1 & 2, Physics 1 & 2, and Intro to Electrical & Computer Engineering."
   }
 ];
 
@@ -74,10 +70,10 @@ const Experience = () => {
     <section id="experience" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-black relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute bottom-0 left-1/4 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-accent/5 rounded-full blur-3xl" />
-      
+
       <div className="section-container relative z-10 px-4 sm:px-6">
         {/* Section Header */}
-        <MotionDiv
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -89,75 +85,57 @@ const Experience = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             Experience & <span className="text-accent">Education</span>
           </h2>
-        </MotionDiv>
+        </motion.div>
 
         {/* Timeline */}
-        <div className="max-w-3xl mx-auto">
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent via-accent/50 to-transparent md:-translate-x-1/2" />
+        <ol className="max-w-3xl mx-auto">
+          {experiences.map((exp, index) => {
+            const Icon = exp.icon;
+            const isLast = index === experiences.length - 1;
 
-            {experiences.map((exp, index) => (
-              <MotionDiv
+            return (
+              <MotionLi
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`relative flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12 ${
-                  index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                }`}
+                transition={{ delay: index * 0.08 }}
+                className="grid grid-cols-[auto_1fr] sm:grid-cols-[8.5rem_auto_1fr] gap-x-4 sm:gap-x-6"
               >
-                {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-accent rounded-full md:-translate-x-1/2 shadow-lg shadow-accent/50">
-                  {(exp.current || exp.upcoming) && (
-                    <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-50" />
-                  )}
+                {/* Date (desktop) */}
+                <p className="hidden sm:block text-right text-white/50 text-sm pt-2.5">
+                  {exp.date}
+                </p>
+
+                {/* Icon + connector */}
+                <div className="flex flex-col items-center">
+                  <span className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-accent text-black shadow-lg shadow-accent/30 flex-shrink-0">
+                    <Icon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" />
+                  </span>
+                  {!isLast && <span className="w-px flex-1 bg-white/10 my-2" />}
                 </div>
 
                 {/* Content */}
-                <div className={`ml-6 sm:ml-8 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'}`}>
-                  <div className="glass-card p-4 sm:p-5 md:p-6 hover-lift">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-0 mb-3 sm:mb-4">
-                      <div>
-                        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white">{exp.title}</h3>
-                        <p className="text-accent text-sm sm:text-base font-medium">{exp.company}</p>
-                      </div>
-                      {exp.current && (
-                        <span className="self-start px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs bg-accent/10 text-accent rounded-full border border-accent/20 whitespace-nowrap">
-                          Current
-                        </span>
-                      )}
-                      {exp.upcoming && (
-                        <span className="self-start px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs bg-accent/20 text-accent rounded-full border border-accent/30 whitespace-nowrap">
-                          Upcoming
-                        </span>
-                      )}
-                    </div>
-                    
-                    <p className="text-white/50 text-xs sm:text-sm mb-3 sm:mb-4">{exp.date}</p>
-                    
-                    <ul className="space-y-2 sm:space-y-3">
-                      {exp.details.map((detail, i) => (
-                        <li key={i} className="flex gap-2 sm:gap-3 text-white/70 text-xs sm:text-sm">
-                          <span className="text-accent mt-1 sm:mt-1.5 flex-shrink-0">
-                            <svg className="w-2 h-2 sm:w-3 sm:h-3" fill="currentColor" viewBox="0 0 8 8">
-                              <circle cx="4" cy="4" r="3" />
-                            </svg>
-                          </span>
-                          <span className="min-w-0 leading-relaxed">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className={isLast ? 'pt-1' : 'pt-1 pb-8 sm:pb-10'}>
+                  <p className="sm:hidden text-white/50 text-xs mb-1">{exp.date}</p>
+                  <h3 className="text-base sm:text-lg font-semibold text-white leading-snug">{exp.title}</h3>
+                  <p className="text-accent text-sm font-medium">{exp.company}</p>
+                  <p className="text-white/60 text-xs sm:text-sm leading-relaxed mt-2">{exp.description}</p>
+                  {exp.researchLink && (
+                    <a
+                      href="#projects"
+                      onClick={() => window.dispatchEvent(new Event('show-research-projects'))}
+                      className="inline-flex items-center gap-1 text-accent hover:text-accent-light text-xs sm:text-sm font-medium mt-2 group"
+                    >
+                      View my research projects
+                      <span className="transform group-hover:translate-x-0.5 transition-transform">→</span>
+                    </a>
+                  )}
                 </div>
-
-                {/* Empty space for alternating layout */}
-                <div className="hidden md:block md:w-1/2" />
-              </MotionDiv>
-            ))}
-          </div>
-        </div>
+              </MotionLi>
+            );
+          })}
+        </ol>
       </div>
     </section>
   );
