@@ -18,6 +18,7 @@ const projects = [
   },
   {
     title: "FixMesh",
+    category: "research",
     description: "Built a Python toolkit for repairing self-intersecting brain cortical surface meshes (STL) that wraps PyMesh, PyMeshFix, and MeshLib to compare repair strategies. Developed a push-apart method that moves crossing triangles back into their own gyrus instead of deleting and patching them, preserving sulcal depth, with a CLI, an evaluation pipeline, and Sphinx docs.",
     tags: ["Python", "C++", "PyMesh", "MeshLib", "Computational Geometry"],
     github: "https://github.com/dariadobrolinski/fixmesh",
@@ -27,6 +28,7 @@ const projects = [
     title: "Sync",
     description: "Built an iOS menstrual cycle companion in SwiftUI with predictions that adapt to your logged history and explain what they're based on, cross-cycle symptom comparison, phase-matched meal ideas, and a Gemini-powered AI companion (via Firebase AI Logic) that logs days and answers questions from your own data and a curated health library, with consent and scope guardrails.",
     tags: ["Swift", "SwiftUI", "Firebase", "Firestore", "Vertex AI"],
+    github: "https://github.com/raneemabuhasan/Hackathon2026",
     poster: "/images/sync_slides.pdf",
     posterAspect: "16/9",
     linkLabel: "View Slides",
@@ -44,6 +46,7 @@ const projects = [
   },
   {
     title: "Cortical Geometry Effects on tCS Electric Field Estimate",
+    category: "research",
     description: "Refactoring and extending a MATLAB pipeline that uses Spherical Harmonic analysis to reconstruct and systematically vary cortical brain surfaces from FreeSurfer MRI data, generating morphologically diverse head models for TMS/tDCS stimulation research.",
     tags: ["MATLAB", "Spherical Harmonics", "Neuroimaging", "FreeSurfer", "TMS/tDCS"],
     poster: "/images/research_poster.pdf",
@@ -316,11 +319,23 @@ const ProjectCard = ({ project, index }) => {
   );
 };
 
-const INITIAL_PROJECT_COUNT = 6;
+const INITIAL_PROJECT_COUNT = 4;
+
+const tabs = [
+  { id: "projects", label: "Projects" },
+  { id: "research", label: "Research" },
+];
 
 const Projects = () => {
+  const [activeTab, setActiveTab] = useState("projects");
   const [showAll, setShowAll] = useState(false);
-  const visibleProjects = showAll ? projects : projects.slice(0, INITIAL_PROJECT_COUNT);
+  const tabProjects = projects.filter((project) => (project.category || "projects") === activeTab);
+  const visibleProjects = showAll ? tabProjects : tabProjects.slice(0, INITIAL_PROJECT_COUNT);
+
+  const selectTab = (tabId) => {
+    setActiveTab(tabId);
+    setShowAll(false);
+  };
 
   return (
     <section id="projects" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-black relative overflow-hidden">
@@ -339,30 +354,52 @@ const Projects = () => {
             Portfolio
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-            Selected <span className="text-accent">Projects</span>
+            Research & Personal <span className="text-accent">Projects</span>
           </h2>
           <p className="text-white/60 text-sm sm:text-base max-w-2xl mx-auto mt-3 sm:mt-4 px-4">
-            A collection of projects that showcase my skills in full-stack development, 
+            A collection of research and projects that showcase my skills in full-stack development, 
             machine learning, and creative problem-solving.
           </p>
         </motion.div>
 
+        {/* Tabs */}
+        <div className="flex justify-center mb-8 sm:mb-10">
+          <div role="tablist" className="inline-flex rounded-full border border-white/10 bg-white/[0.02] p-1">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
+                aria-selected={activeTab === tab.id}
+                onClick={() => selectTab(tab.id)}
+                className={`rounded-full px-5 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base font-medium transition-colors ${
+                  activeTab === tab.id
+                    ? "bg-accent text-black"
+                    : "text-white/60 hover:text-white"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Projects Grid */}
         <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 auto-rows-fr">
           {visibleProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
+            <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
 
         {/* View More */}
-        {projects.length > INITIAL_PROJECT_COUNT && (
+        {tabProjects.length > INITIAL_PROJECT_COUNT && (
           <div className="text-center mt-8 sm:mt-10">
             <button
               type="button"
               onClick={() => setShowAll((prev) => !prev)}
               className="rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors px-5 sm:px-6 py-2 text-sm sm:text-base font-medium"
             >
-              {showAll ? "Show less" : `View more (${projects.length - INITIAL_PROJECT_COUNT})`}
+              {showAll ? "Show less" : `View more (${tabProjects.length - INITIAL_PROJECT_COUNT})`}
             </button>
           </div>
         )}
