@@ -17,7 +17,8 @@ import cImg from '../assets/c.png';
 import htmlImg from '../assets/html.png';
 import spanishImg from '../assets/spanish.png';
 import polishImg from '../assets/polish.png';
-import syncAwardImg from '../assets/sync-award.jpeg';
+
+const syncAwardImg = '/images/sync_award.jpeg';
 
 const awards = [
   { img: syncAwardImg, alt: "People's Choice Award - UMass Boston AI Symposium (Team Sync)" },

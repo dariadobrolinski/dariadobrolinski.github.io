@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { GiArchiveResearch, GiTrophyCup } from 'react-icons/gi';
 import { Spotlight } from './Spotlight';
-import syncAwardImg from '../assets/sync-award.jpeg';
+
+const syncAwardImg = '/images/sync_award.jpeg';
 
 const projects = [
   {
