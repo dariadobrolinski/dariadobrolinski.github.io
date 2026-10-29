@@ -4,6 +4,16 @@ const MotionDiv = motion.div;
 
 const experiences = [
   {
+    title: "Software Development",
+    company: "Lumen Technologies",
+    date: "August 2026 - Present",
+    details: [
+      "Contributing to MITCH, a telecommunications service-automation platform that modernizes legacy ARM inventory APIs by routing requests to modern services and transforming responses into backward-compatible contracts."
+    ],
+    current: true,
+    upcoming: false
+  },
+  {
     title: "Software Development Intern",
     company: "Lumen Technologies",
     date: "May 2026 - August 2026",
@@ -11,7 +21,7 @@ const experiences = [
       "Built a Terraform-based Datadog monitoring framework across 18+ services with reusable modules and a Python CLI, reducing monitor setup from 30-120 minutes to about 2 minutes per service.",
       "Designed multi-cloud secret-rotation automation across AWS, Azure, GCP, and Oracle to standardize security workflows and reduce credential-related downtime risk."
     ],
-    current: true,
+    current: false,
     upcoming: false
   },
   {
