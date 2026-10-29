@@ -38,7 +38,8 @@ const projects = [
     date: "10/2026"
   },
   {
-    title: "Prettied with Paige – Business Site",
+    title: "Prettied with Paige",
+    achievement: "Business Site",
     description: "Built a business portfolio site for a hairdresser using Next.js 16, React 19, TypeScript, and Tailwind CSS with Supabase integration, featuring a portfolio gallery, customer reviews with ratings, an inquiry form for potential clients, and a password-protected admin panel for managing reviews.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase"],
     live: "https://www.prettiedwithpaige.hair/",
