@@ -10,7 +10,7 @@ const projects = [
   {
     title: "WiseMind",
     description: "Built an iOS mental-wellness app in SwiftUI that makes Dialectical Behavior Therapy (DBT) skills easy to learn and practice, with personalized onboarding, a guided curriculum with streaks, skill recommendations, Home Screen widgets and Live Activities, an SOS crisis toolkit, a mood journal, and a StoreKit subscription. Backed by Firebase with privacy-first analytics that never include personal data.",
-    tags: ["Swift", "SwiftUI", "Core Data", "WidgetKit", "Firebase"],
+    tags: ["Swift", "WidgetKit", "Firebase", "Firestore"],
     live: "https://dbtwisemind.com/",
     linkLabel: "Website",
     collaborator: { name: "Edward Gaibor", url: "https://edwardgaibor.me/" },
@@ -28,7 +28,7 @@ const projects = [
   {
     title: "Sync",
     description: "Built an iOS menstrual cycle companion in SwiftUI with predictions that adapt to your logged history and explain what they're based on, cross-cycle symptom comparison, phase-matched meal ideas, and a Gemini-powered AI companion (via Firebase AI Logic) that logs days and answers questions from your own data and a curated health library, with consent and scope guardrails.",
-    tags: ["Swift", "SwiftUI", "Firebase", "Firestore", "Vertex AI"],
+    tags: ["Swift", "Firebase", "Firestore", "Vertex AI"],
     github: "https://github.com/raneemabuhasan/Hackathon2026",
     poster: "/images/sync_slides.pdf",
     posterAspect: "16/9",
