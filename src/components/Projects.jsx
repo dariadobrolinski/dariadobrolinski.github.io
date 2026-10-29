@@ -177,18 +177,6 @@ const ProjectCard = ({ project, index }) => {
             {project.description}
           </p>
 
-          {/* Tags */}
-          <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
-            {project.tags.map((tag, i) => (
-              <span
-                key={i}
-                className="px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium rounded-full bg-accent/10 text-accent border border-accent/20"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
           {/* Links */}
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2 sm:gap-x-4">
             {project.github && project.github !== "#" && (
