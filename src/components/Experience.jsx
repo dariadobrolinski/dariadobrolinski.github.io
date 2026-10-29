@@ -5,7 +5,7 @@ import { GiBrain } from 'react-icons/gi';
 
 const MotionLi = motion.li;
 
-const linkClass = "text-accent hover:text-accent-light underline underline-offset-2";
+const linkClass = "text-white/90 underline decoration-accent/60 decoration-1 underline-offset-[3px] hover:text-white hover:decoration-accent transition-colors";
 
 const experiences = [
   {
@@ -61,7 +61,26 @@ const experiences = [
     company: "University of Massachusetts Boston",
     date: "Jan 2024 – May 2027",
     icon: FiBookOpen,
-    description: "Coursework includes Data Structures, Algorithms, Discrete Math, Calculus 1 & 2, Physics 1 & 2, and Intro to Electrical & Computer Engineering."
+    description: (
+      <>
+        <span className="block">
+          <a href="https://hluce.org/programs/clare-boothe-luce/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+            Clare Boothe Luce Fellow
+          </a>
+          <span className="text-white/40"> · Spring 2026</span>
+        </span>
+        <span className="block">
+          <a href="https://www.umb.edu/science-mathematics/student-success-center/career--research-opportunities/urf/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+            CSM Undergraduate Research Fellow
+          </a>
+          <span className="text-white/40"> · Fall 2025, Fall 2026</span>
+        </span>
+        <span className="block">
+          <span className="text-white/90">Dean's List</span>
+          <span className="text-white/40"> · Fall 2024, Spring 2025</span>
+        </span>
+      </>
+    )
   }
 ];
 
