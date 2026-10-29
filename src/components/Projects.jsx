@@ -1,20 +1,46 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { GiArchiveResearch } from 'react-icons/gi';
+import { GiArchiveResearch, GiTrophyCup } from 'react-icons/gi';
 import { Spotlight } from './Spotlight';
+import syncAwardImg from '../assets/sync-award.jpeg';
 
 const projects = [
   {
-    title: "Elara AI",
-    description: "Collaborated on building a Python FastAPI backend for Elara AI, an intelligent chatbot that suggests natural remedies for medical concerns. Built using MongoDB, Vertex AI (Gemini), and deployed on Google Cloud.",
-    tags: ["Python", "FastAPI", "MongoDB", "Vertex AI", "Google Cloud"],
-    github: "https://github.com/dariadobrolinski/elaraBackend",
-    live: "https://elarafrontend-114195159699.us-east1.run.app/",
+    title: "WiseMind",
+    description: "Built an iOS mental-wellness app in SwiftUI that makes Dialectical Behavior Therapy (DBT) skills easy to learn and practice, with personalized onboarding, a guided curriculum with streaks, skill recommendations, Home Screen widgets and Live Activities, an SOS crisis toolkit, a mood journal, and a StoreKit subscription. Backed by Firebase with privacy-first analytics that never include personal data.",
+    tags: ["Swift", "SwiftUI", "Core Data", "WidgetKit", "Firebase"],
+    live: "https://dbtwisemind.com/",
+    linkLabel: "Website",
     collaborator: { name: "Edward Gaibor", url: "https://edwardgaibor.me/" },
-    achievement: "3rd place in the GC × MongoDB hackathon out of 7k participants",
+    achievement: "400 downloads on App Store",
+    date: "11/2025 - Present"
+  },
+  {
+    title: "FixMesh",
+    description: "Built a Python toolkit for repairing self-intersecting brain cortical surface meshes (STL) that wraps PyMesh, PyMeshFix, and MeshLib to compare repair strategies. Developed a push-apart method that moves crossing triangles back into their own gyrus instead of deleting and patching them, preserving sulcal depth, with a CLI, an evaluation pipeline, and Sphinx docs.",
+    tags: ["Python", "C++", "PyMesh", "MeshLib", "Computational Geometry"],
+    github: "https://github.com/dariadobrolinski/fixmesh",
+    date: "08/2026 - Present"
+  },
+  {
+    title: "Sync",
+    description: "Built an iOS menstrual cycle companion in SwiftUI with predictions that adapt to your logged history and explain what they're based on, cross-cycle symptom comparison, phase-matched meal ideas, and a Gemini-powered AI companion (via Firebase AI Logic) that logs days and answers questions from your own data and a curated health library, with consent and scope guardrails.",
+    tags: ["Swift", "SwiftUI", "Firebase", "Firestore", "Vertex AI"],
+    poster: "/images/sync_slides.pdf",
+    posterAspect: "16/9",
+    linkLabel: "View Slides",
+    achievement: "People's Choice Award (270 votes) at the UMass Boston AI Symposium",
+    image: { src: syncAwardImg, label: "View Award" },
     featured: true,
-    date: "06/2025"
+    date: "10/2026"
+  },
+  {
+    title: "Prettied with Paige – Business Site",
+    description: "Built a business portfolio site for a hairdresser using Next.js 16, React 19, TypeScript, and Tailwind CSS with Supabase integration, featuring a portfolio gallery, customer reviews with ratings, an inquiry form for potential clients, and a password-protected admin panel for managing reviews.",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase"],
+    live: "https://www.prettiedwithpaige.hair/",
+    date: "01/2026 - Present"
   },
   {
     title: "Cortical Geometry Effects on tCS Electric Field Estimate",
@@ -25,11 +51,16 @@ const projects = [
     date: "02/2025 - Present"
   },
   {
-    title: "Prettied with Paige – Business Site",
-    description: "Built a business portfolio site for a hairdresser using Next.js 16, React 19, TypeScript, and Tailwind CSS with Supabase integration, featuring a portfolio gallery, customer reviews with ratings, an inquiry form for potential clients, and a password-protected admin panel for managing reviews.",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase"],
-    live: "https://www.prettiedwithpaige.hair/",
-    date: "01/2026"
+    title: "Elara AI",
+    description: "Collaborated on building a Python FastAPI backend for Elara AI, an intelligent chatbot that suggests natural remedies for medical concerns. Built using MongoDB, Vertex AI (Gemini), and deployed on Google Cloud.",
+    tags: ["Python", "FastAPI", "MongoDB", "Vertex AI", "Google Cloud"],
+    github: "https://github.com/dariadobrolinski/elaraBackend",
+    live: "https://elarafrontend-114195159699.us-east1.run.app/",
+    collaborator: { name: "Edward Gaibor", url: "https://edwardgaibor.me/" },
+    achievement: "3rd place in the GC × MongoDB hackathon out of 7k participants",
+    awardLink: "https://devpost.com/software/elara-x47age",
+    featured: true,
+    date: "06/2025"
   },
   {
     title: "Brutal Notes",
@@ -67,20 +98,22 @@ const projects = [
 ];
 
 const ProjectCard = ({ project, index }) => {
-  const [isPosterOpen, setIsPosterOpen] = useState(false);
+  // null, 'poster' or 'image'
+  const [openViewer, setOpenViewer] = useState(null);
+  const viewerSrc = openViewer === 'image' ? project.image.src : project.poster;
 
   useEffect(() => {
-    if (!isPosterOpen) return undefined;
+    if (!openViewer) return undefined;
 
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
-        setIsPosterOpen(false);
+        setOpenViewer(null);
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isPosterOpen]);
+  }, [openViewer]);
 
   return (
     <motion.div
@@ -129,11 +162,8 @@ const ProjectCard = ({ project, index }) => {
 
           {/* Achievement */}
           {project.achievement && (
-            <p className="text-accent text-xs sm:text-sm font-medium mb-2 sm:mb-3 flex items-start sm:items-center gap-1">
-              <svg className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0 mt-0.5 sm:mt-0" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              <span>{project.achievement}</span>
+            <p className="text-accent text-xs sm:text-sm font-medium mb-2 sm:mb-3">
+              {project.achievement}
             </p>
           )}
 
@@ -155,7 +185,7 @@ const ProjectCard = ({ project, index }) => {
           </div>
 
           {/* Links */}
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 sm:gap-x-4">
             {project.github && project.github !== "#" && (
               <a
                 href={project.github}
@@ -172,12 +202,33 @@ const ProjectCard = ({ project, index }) => {
             {project.poster && (
               <button
                 type="button"
-                onClick={() => setIsPosterOpen(true)}
+                onClick={() => setOpenViewer('poster')}
                 className="flex items-center gap-1.5 sm:gap-2 text-white/60 hover:text-accent transition-colors text-xs sm:text-sm"
               >
                 <GiArchiveResearch className="w-4 h-4 sm:w-5 sm:h-5" />
                 {project.linkLabel || "View Poster"}
               </button>
+            )}
+            {project.image && (
+              <button
+                type="button"
+                onClick={() => setOpenViewer('image')}
+                className="flex items-center gap-1.5 sm:gap-2 text-white/60 hover:text-accent transition-colors text-xs sm:text-sm"
+              >
+                <GiTrophyCup className="w-4 h-4 sm:w-5 sm:h-5" />
+                {project.image.label}
+              </button>
+            )}
+            {project.awardLink && (
+              <a
+                href={project.awardLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 sm:gap-2 text-white/60 hover:text-accent transition-colors text-xs sm:text-sm"
+              >
+                <GiTrophyCup className="w-4 h-4 sm:w-5 sm:h-5" />
+                View Award
+              </a>
             )}
             {project.live && !project.poster && (
               <a
@@ -211,13 +262,13 @@ const ProjectCard = ({ project, index }) => {
         </div>
       </div>
 
-      {project.poster && isPosterOpen && createPortal(
+      {openViewer && createPortal(
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80"
           role="dialog"
           aria-modal="true"
-          aria-label={`${project.title} poster`}
-          onClick={() => setIsPosterOpen(false)}
+          aria-label={`${project.title} ${openViewer}`}
+          onClick={() => setOpenViewer(null)}
         >
           <div
             className="w-full max-w-4xl mx-4 flex flex-col rounded-xl overflow-hidden border border-white/10 max-h-[calc(100dvh-2rem)]"
@@ -227,7 +278,7 @@ const ProjectCard = ({ project, index }) => {
               <span className="text-white/60 text-xs">{project.title}</span>
               <div className="flex items-center gap-2">
                 <a
-                  href={project.poster}
+                  href={viewerSrc}
                   download
                   className="rounded-full bg-accent/20 text-accent hover:bg-accent/30 transition-colors px-4 py-1.5 text-sm font-medium"
                 >
@@ -235,7 +286,7 @@ const ProjectCard = ({ project, index }) => {
                 </a>
                 <button
                   type="button"
-                  onClick={() => setIsPosterOpen(false)}
+                  onClick={() => setOpenViewer(null)}
                   className="rounded-full bg-white/10 text-white/70 hover:text-white hover:bg-white/20 transition-colors px-4 py-1.5 text-sm font-medium"
                 >
                   Close
@@ -243,11 +294,19 @@ const ProjectCard = ({ project, index }) => {
               </div>
             </div>
             <div className="overflow-auto">
-              <iframe
-                title={`${project.title} poster`}
-                src={`${project.poster}#toolbar=0&view=FitH`}
-                style={{ width: '100%', aspectRatio: '4/3', display: 'block' }}
-              />
+              {openViewer === 'image' ? (
+                <img
+                  src={viewerSrc}
+                  alt={`${project.title} award certificate`}
+                  className="w-full block"
+                />
+              ) : (
+                <iframe
+                  title={`${project.title} poster`}
+                  src={`${viewerSrc}#toolbar=0&view=FitH`}
+                  style={{ width: '100%', aspectRatio: project.posterAspect || '4/3', display: 'block' }}
+                />
+              )}
             </div>
           </div>
         </div>,
@@ -257,7 +316,12 @@ const ProjectCard = ({ project, index }) => {
   );
 };
 
+const INITIAL_PROJECT_COUNT = 6;
+
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleProjects = showAll ? projects : projects.slice(0, INITIAL_PROJECT_COUNT);
+
   return (
     <section id="projects" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-black relative overflow-hidden">
       {/* Background accent */}
@@ -285,10 +349,23 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 auto-rows-fr">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
+
+        {/* View More */}
+        {projects.length > INITIAL_PROJECT_COUNT && (
+          <div className="text-center mt-8 sm:mt-10">
+            <button
+              type="button"
+              onClick={() => setShowAll((prev) => !prev)}
+              className="rounded-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20 transition-colors px-5 sm:px-6 py-2 text-sm sm:text-base font-medium"
+            >
+              {showAll ? "Show less" : `View more (${projects.length - INITIAL_PROJECT_COUNT})`}
+            </button>
+          </div>
+        )}
 
         {/* View All Link */}
         <motion.div
